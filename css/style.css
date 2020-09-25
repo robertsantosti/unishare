@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap');
+
+:root {
+   --green: #3FC44E;
+   --grey: #555454;
+   --blue: #38B6FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 300;
+    opacity: .75;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn.btn-blue {
+    background-color: var(--blue);
+    color: #FFF;
+}
+
+.btn.btn-outline-blue {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    background-color: #FFF;
+}
+
+.btn.btn-outline-blue:hover {
+    border: none;
+    background-color: var(--blue);
+    color: #FFF;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    font-weight: 300;
+}
+
+#app header {
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    padding: 1rem 10%;
+}
+
+#app header .logo{
+    background-image: url('../img/logo.svg');
+    background-repeat: no-repeat;
+    height: 2rem;
+}
+
+
+#app.home main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+#app.home main section:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#app.home main section:first-child article {
+    width: 50vw;
+}
+
+#app.home main section article.content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#app.home main section article.content  .buttons {
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+}
+
+#app.home main section article.content .buttons .btn {
+    margin-right: 1rem;
+}
+
+#app.home main section article.content .buttons .btn:last-child {
+    margin: 0;
+}
+
+#app.home main section:first-child article.content  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--grey);
+}
+
+#app.home main section:first-child article.content  p {
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #aaa;
+}
+
+#app.home main section:first-child article.image {
+    background-image: url('../img/houses.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+
+}
+
+#app footer {
+    color: #FFF;
+    background-color: var(--green);
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 100;
+}
+
+#app footer .logo img{
+    height: 2rem;
+}
+
+#app footer .social-media {
+    display: flex;
+    justify-content: space-evenly;
+    width: 10.7%;
+}
+
+#app footer .footer-menu {
+    width: 33.3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#app footer .footer-menu a {
+    color: #FFF;
+}
