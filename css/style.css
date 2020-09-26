@@ -19,56 +19,6 @@ html, body {
     height: 100%;
 }
 
-.hide-desktop {
-    display: none;
-}
-
-.hide-mobile {
-    display: inline;
-}
-
-.hide-mobile {
-    display: inline;
-}
-
-.text-blue {
-    color: var(--blue);
-}
-
-.text-green {
-    color: var(--green);
-}
-
-.btn {
-    padding: .75rem 2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: 300;
-    opacity: .75;
-    font-size: 1.25rem;
-}
-
-.btn:hover {
-    opacity: 1;
-}
-
-.btn.btn-blue {
-    background-color: var(--blue);
-    color: #FFF;
-}
-
-.btn.btn-outline-blue {
-    border: 1px solid var(--blue);
-    color: var(--blue);
-    background-color: #FFF;
-}
-
-.btn.btn-outline-blue:hover {
-    border: none;
-    background-color: var(--blue);
-    color: #FFF;
-}
-
 #app {
     display: flex;
     flex-direction: column;
@@ -82,8 +32,11 @@ html, body {
     width: 100%;
     padding: 1rem;
     display: flex;
-    align-items: center;
     padding: 1rem 10%;
+}
+
+#app.home header {
+    align-items: center;
 }
 
 #app header .logo img{
@@ -98,6 +51,7 @@ html, body {
     justify-content: center;
     align-items: center;
     padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 #app.home main section{
@@ -204,3 +158,179 @@ html, body {
 #app footer .footer-menu a {
     color: #FFF;
 }
+
+/** Perfil do Usuário **/
+#app.main header {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blue);
+}
+
+#app.main header .logo a {
+    width: 50%;
+}
+
+#app.main header nav{
+    width: 50%;
+}
+
+#app.main header nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 1.25rem;
+}
+
+#app.main header nav ul li a {
+    color:#FFF;
+    transition: .5s;
+}
+
+#app.main header nav ul li a:hover {
+    color: var(--grey);
+}
+
+#app.main.profile main {
+    display: flex;
+    flex-direction: column;
+}
+
+#app.main.profile .profile-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    height: 100%;
+}
+
+#app.main.profile .profile-wrapper article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#app.main.profile .profile-wrapper .profile-picture {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #555454;
+    margin-bottom: 2rem;
+}
+
+#app.main.profile .profile-wrapper .profile-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+#app.main.profile .profile-wrapper .profile-form h1 {
+    color: var(--grey);
+    font-size: 3rem;
+}
+
+#app.main.profile .profile-wrapper .profile-form .submit {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#app.main.profile .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue);
+    color: #FFF;
+    height: 100%;
+    padding: 0 10%;
+}
+
+#app.main.profile .content-wrapper h2 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem 0;
+}
+
+#app.main.profile .content-wrapper .liked-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding-bottom: 3rem;
+}
+
+#app.main.profile .content-wrapper .liked-wrapper .liked .liked-picture{
+    width: 100%;
+    height: 12rem;
+    border-radius: 1rem;
+    background-color: var(--grey);
+}
+
+#app.main.profile .content-wrapper .liked-wrapper .liked .description {
+    padding: 1rem 0;
+    font-weight: 300;
+}
+
+#app.main.profile .content-wrapper .liked-wrapper .liked .description .value {
+    font-weight: 700;
+}
+
+/** Contato **/
+
+#app.main.contact .contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    height: 100%;
+}
+
+#app.main.contact .contact-wrapper article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#app.main.contact .contact-wrapper .article2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 40%;
+}
+
+#app.main.contact .contact-wrapper .contact-form h1 {
+    color: var(--grey);
+    font-size: 3rem;
+    margin-top: 1%;
+}
+
+#app.main.contact .contact-wrapper .contact-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+#app.main.contact .contact-wrapper .contact-form button {
+    display: inline-block;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #38B6FF;
+    border: none;
+}
+
+
+
