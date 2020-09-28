@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --green: #3fc44e;
+    --grey: #555454;
+    --blue: #38b6ff;
+
+}
+
+body, html {
+    height: 100%;
+    
+}
+
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 300;
+}
+
+#app header {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    padding: 1rem 10%;
+}
+
+
+#app.main header {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blue);
+}
+
+#app.main header .logo a {
+    width: 50%;
+}
+
+#app.main header nav{
+    width: 50%;
+}
+
+#app.main header nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 1.25rem;
+}
+
+#app.main header nav ul li a {
+    color:#FFF;
+    transition: .5s;
+}
+
+#app.main header nav ul li a:hover {
+    color: var(--grey);
+}
+
+section {
+    height: 450px;
+
+}
+
+
+.banner img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    
+}
+
+.pesquisa {
+    
+    display: flex;
+
+    
+}
+.container-pai {
+    display: flex;
+    justify-content: center;
+}
+.container-input-button { 
+
+    width: 70%;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+
+    
+
+}
+.container-input-button p {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+#texto-input {
+    width: 300px;
+    height: 45px;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    background: var(--blue);
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 0;
+    color: gray;
+    outline-style: none;
+}
+
+.btn-pesquisa{
+    width: 40px;
+    height: 45px;
+    border: none;
+    background-color: transparent;
+    background: var(--blue);
+    padding: 2px;
+    border-left: 1px solid var(--grey);
+    outline-style: none;
+    
+}
+.img-pesquisa {
+    width: 25px;
+    height: 100%;
+}
+
+.btn-anuncie {
+    width: 350px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--green);
+    color: white;
+    font-size: 15px;
+    outline-style: none;
+    
+}
+
+.btn-anuncie:hover {
+    background-color: green;
+
+}
+
+.btn-pesquisa:focus{
+    cursor: pointer;
+}
+
+footer {
+    color: #FFF;
+    background-color: var(--green);
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 300;
+}
+
+footer .logo img{
+    height: 2rem;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: space-evenly;
+    width: 10.7%;
+    font-size: 1.5rem;
+}
+
+footer .footer-menu {
+    width: 33.3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-menu ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer .footer-menu ul li {
+    width: 100%;
+    border-right: 1px solid #fff;
+    text-align: center;
+}
+
+footer .footer-menu ul li:last-child {
+    border: none;
+}
+
+footer .footer-menu a {
+    color: #FFF;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    color: var(--grey);
+    height: 100%;
+    padding: 0 10%;
+    margin-top: 150px;
+}
+
+
+.content-wrapper .liked-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding-bottom: 3rem;
+}
+
+.content-wrapper .liked-wrapper .liked .liked-picture{
+    width: 100%;
+    height: 12rem;
+    border-radius: 1rem;
+    background-color: var(--grey);
+}
+
+
+
+.content-wrapper .liked-wrapper .liked .description {
+    padding: 1rem 0;
+    font-weight: 300;
+}
+
+.content-wrapper .liked-wrapper .liked .description .value {
+    font-weight: 700;
+}
