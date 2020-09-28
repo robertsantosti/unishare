@@ -65,6 +65,7 @@ html, body {
     width: 50vw;
 }
 
+<<<<<<< Updated upstream
 #app.home main section article.content {
     display: flex;
     flex-direction: column;
@@ -109,6 +110,8 @@ html, body {
     height: 100%;
 }
 
+=======
+>>>>>>> Stashed changes
 #app footer {
     color: #FFF;
     background-color: var(--green);
@@ -159,13 +162,18 @@ html, body {
     color: #FFF;
 }
 
+<<<<<<< Updated upstream
 /** Perfil do Usuário **/
 #app.main header {
+=======
+#app header {
+>>>>>>> Stashed changes
     justify-content: space-between;
     align-items: center;
     background-color: var(--blue);
 }
 
+<<<<<<< Updated upstream
 #app.main header .logo a {
     width: 50%;
 }
@@ -175,27 +183,55 @@ html, body {
 }
 
 #app.main header nav ul {
+=======
+#app header .logo a {
+    width: 50%;
+}
+
+#app header nav{
+    width: 50%;
+}
+
+#app header nav ul {
+>>>>>>> Stashed changes
     display: flex;
     justify-content: space-around;
     list-style: none;
     font-size: 1.25rem;
 }
 
+<<<<<<< Updated upstream
 #app.main header nav ul li a {
+=======
+#app header nav ul li a {
+>>>>>>> Stashed changes
     color:#FFF;
     transition: .5s;
 }
 
+<<<<<<< Updated upstream
 #app.main header nav ul li a:hover {
     color: var(--grey);
 }
 
 #app.main.profile main {
+=======
+#app header nav ul li a:hover {
+    color: var(--grey);
+}
+
+/*Início*/
+#app.detail-anuncio main {
+>>>>>>> Stashed changes
     display: flex;
     flex-direction: column;
 }
 
+<<<<<<< Updated upstream
 #app.main.profile .profile-wrapper {
+=======
+#app.detail-anuncio .anuncio-wrapper {
+>>>>>>> Stashed changes
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -203,6 +239,7 @@ html, body {
     height: 100%;
 }
 
+<<<<<<< Updated upstream
 #app.main.profile .profile-wrapper article {
     display: flex;
     flex-direction: column;
@@ -334,3 +371,71 @@ html, body {
 
 
 
+=======
+#app.detail-anuncio .anuncio-wrapper .anuncio-data{
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+#app.detail-anuncio .anuncio-wrapper .anuncio-data h1 {
+    color: #263238;
+    font-size: 2rem;
+    text-align: left;
+}
+
+#app.detail-anuncio .anuncio-wrapper .anuncio-data h2 {
+    color: #7A7979;
+    font-weight: normal;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+#app.detail-anuncio .anuncio-wrapper .text-anuncio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#app.detail-anuncio .anuncio-wrapper .text-anuncio h2{
+    color:  #263238;
+    text-align: right;
+}
+
+#app.detail-anuncio .content-wrapper {
+    display: flex;
+    height: 100%;
+    padding: 0 10%;
+}
+
+#app.detail-anuncio .content-wrapper .photos {
+    display: flex;
+    width: 100%;
+}
+
+#app.detail-anuncio .content-wrapper .photos .secondary{
+    width: 41%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#app.detail-anuncio .content-wrapper .photos .secondary .secondary-picture{
+    width: 100%;
+    height: 12rem;
+    border-radius: 1rem;
+    background-color: var(--grey);
+}
+
+#app.detail-anuncio .content-wrapper .photos .principal{
+    width: 58%;
+    margin-right: 1%;
+    height: 24.5rem;
+    border-radius: 1rem;
+    background-color: var(--grey);
+}
+>>>>>>> Stashed changes

@@ -3,6 +3,7 @@
         display: none;
     }
 
+<<<<<<< Updated upstream
     #app.home main section article.content  {
         padding: 0 5%;
     }
@@ -35,6 +36,56 @@
 }
 
 @media screen and (max-width: 500px) {
+=======
+    #app footer .social-media {
+        font-size: 1rem;
+        width: 15%;
+    }
+
+    #app footer .footer-menu {
+        font-size: .75rem;
+        width: 70%;
+    }
+    #app.detail-anuncio .anuncio-wrapper .anuncio-data .text-anuncio h2 {
+        min-width: 18%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #app.detail-anuncio .anuncio-wrapper .text-anuncio{
+        display: block;
+    }
+    
+    #app.detail-anuncio .anuncio-wrapper .anuncio-data h1 {
+        width: 100%;
+    }
+    
+    #app.detail-anuncio .anuncio-wrapper .anuncio-data .text-anuncio h2 {
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: right;
+    }
+
+    #app.detail-anuncio .content-wrapper .photos{
+        display: block;
+        width: 100%;
+    }
+
+    #app.detail-anuncio .content-wrapper .photos .principal{
+        width: 100%;
+        height: 12rem;
+        margin-bottom: 5%;
+    }
+
+    #app.detail-anuncio .content-wrapper .photos .secondary{
+        width: 100%;
+    }
+
+    #app.detail-anuncio .content-wrapper .photos .secondary-picture{
+        margin-bottom: 5%;
+    }
+
+>>>>>>> Stashed changes
     .hide-desktop {
         display: flex;
     }
@@ -47,6 +98,7 @@
         justify-content: center;
     }
 
+<<<<<<< Updated upstream
     #app.home main section {
         flex-direction: column;
     }
@@ -76,6 +128,24 @@
 
     #app.home main section article.content .buttons {
         margin-top: 2rem;
+=======
+/*adicionado para verificar visual do header dentro da tela mobile*/
+    #app header li{
+        display: none;
+    }
+/*fim header mobile*/
+
+    #app.detail-anuncio main section {
+        flex-direction: column;
+    }
+
+    #app.detail-anuncio main section article{
+        width: 100%;
+    }
+    
+    #app.detail-anuncio main section .content {
+        width: 100%;
+>>>>>>> Stashed changes
     }
 
     .btn {
