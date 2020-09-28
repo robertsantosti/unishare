@@ -308,6 +308,20 @@ html, body {
     height: 40%;
 }
 
+
+#app.main.contact p {
+    color: #6A6969;
+}
+
+#app.main.contact .whatsappicon {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 5rem;
+    color: #3FC44E;
+
+}
+
 #app.main.contact .contact-wrapper .contact-form h1 {
     color: var(--grey);
     font-size: 3rem;
@@ -323,6 +337,10 @@ html, body {
     padding: 1rem;
 }
 
+#app.main.contact .contact-wrapper .contact-form p{
+   color: #6A6969;
+}
+
 #app.main.contact .contact-wrapper .contact-form button {
     display: inline-block;
     justify-content: flex-end;
@@ -330,6 +348,7 @@ html, body {
     margin-top: 1rem;
     background-color: #38B6FF;
     border: none;
+    border-radius: 15px;
 }
 
 
