@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style-anunciar.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <title>uniShare - Anunciar</title>
+  </head>
+  <body onload="load();">
+    <div id="app">
+      <header>
+        <div class="container-header">
+                <input id="check" type="checkbox" />
+                <label for="check">
+                <div class="menu-hamb">
+                    <img src="./img/logo-branca.svg" alt="" />
+                    <span class="hamburguer"></span>
+                </div>
+                </label>
+
+                <ul class="ul-mbl">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Meu perfil</a></li>
+                </ul>
+        </div>
+      </header>
+
+      <main>
+        <div class="container-main">
+          <h1>Inserir anúncio</h1>
+          <form name="anuncie" action="#" method="get">
+            <div class="box-info">
+              <div class="box1">
+                <input type="text" name="title" placeholder="Título do anúncio"/><br>
+                <input  type="text" name="city" placeholder="Cidade/Estado"/><br>
+                <input  type="text" name="street" placeholder="Rua, bairro"/><br>
+                <input  type="number" step = "0.01" name="price" id="" placeholder="Preço (R$)"/><br>
+              </div>
+              
+              <div class="box2">
+                <textarea name="description" placeholder="Descrição"></textarea>
+                <input 
+                  type="file"
+                  name="images"
+                  id="files"
+                  placeholder="Adicionar Fotos"
+                  accept="image/png, image/jpeg, image/jpg"
+                  onchange="count()"
+                  multiple
+                />
+                <label for="files">Adicionar Fotos
+                  <br>
+                  <br>
+                  +
+                </label>
+                <p id="count"></p>
+              </div>
+            </div>
+
+            <div class="box-button">
+              <div><button type="reset" id="clear">Apagar</button></div>
+              <div><button type="submit" id="submit" onclick="return validar()">Anunciar</button></div>
+            </div>
+          </form>
+        </div>
+      </main>
+
+      <footer>
+        <div class="logo hide-mobile hide-tablet">
+          <img src="./img/logo-branca.svg" alt="UniShare" />
+        </div>
+        <div class="social-media">
+          <span class="fab fa-whatsapp"></span>
+          <span class="fab fa-instagram"></span>
+          <span class="fab fa-twitter"></span>
+          <span class="fab fa-linkedin-in"></span>
+        </div>
+        <nav class="footer-menu">
+          <ul>
+            <li><a href="">Sobre a uniShare</a></li>
+            <li><a href="">Termos de uso</a></li>
+            <li>
+              <span>uniShare<sup>&copy;</sup> 2020</span>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+    <script src="/javascript/events-anunciar.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f82486fc2e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
