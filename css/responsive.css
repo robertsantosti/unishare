@@ -42,6 +42,16 @@
   }
 }
 
+@media (max-width: 700px) {
+  #app.main.principal main {
+    padding: 0;
+    margin-top: 1rem;
+  }
+  #app.main.principal main section {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 500px) {
   #app footer .social-media {
     font-size: 1rem;
@@ -186,9 +196,13 @@
     margin: 0;
   }
 
-  #app.main.principal .content-wrapper .liked-wrapper,
+  #app.main.principal .content-wrapper .room-wrapper,
   #app.main.profile .content-wrapper .liked-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .search-wrapper input {
+    width: 15rem;
   }
 
   #app.detail-anuncio main section {

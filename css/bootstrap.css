@@ -41,6 +41,12 @@
   color: #fff;
 }
 
+.btn.btn-green {
+  background-color: var(--green);
+  border: none;
+  color: #fff;
+}
+
 .btn.btn-outline-blue {
   border: 1px solid var(--blue);
   color: var(--blue);
@@ -72,6 +78,10 @@
   background-color: transparent;
   outline: none;
   color: var(--grey);
+}
+
+.btn.btn-rounded {
+  border-radius: 1rem;
 }
 
 .active {
@@ -114,6 +124,32 @@
   border-bottom: 2px solid #fff;
   width: 100%;
   text-align: center;
+}
+
+.search-wrapper {
+  display: flex;
+  color: var(--grey);
+  font-weight: 300;
+}
+
+.search-wrapper input {
+  padding-left: 1rem;
+  border: 0;
+  background-color: var(--soft_blue);
+  border-radius: 0.5rem 0 0 0.5rem;
+  height: 2.5rem;
+  width: 20rem;
+}
+
+.search-wrapper button {
+  border: 0;
+  width: 3rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--grey);
+  background-color: var(--soft_blue);
 }
 
 .show {
