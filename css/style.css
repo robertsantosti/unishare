@@ -472,6 +472,10 @@ body {
   color: var(--grey);
 }
 
+#app.main.profile .content-wrapper .room-wrapper .room {
+  padding: 1rem 0;
+}
+
 #app.main.profile .content-wrapper .room-wrapper .room .actions {
   display: flex;
   justify-content: space-between;

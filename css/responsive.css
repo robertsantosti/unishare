@@ -198,7 +198,8 @@
   }
 
   #app.main.principal .content-wrapper .room-wrapper,
-  #app.main.profile .content-wrapper .liked-wrapper {
+  #app.main.profile .content-wrapper .liked-wrapper,
+  #app.main.profile .content-wrapper .room-wrapper {
     grid-template-columns: 1fr;
   }
 
