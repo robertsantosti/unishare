@@ -140,7 +140,7 @@ p a {
 
 a:hover {
     text-decoration: underline;
-    color: var(--blue);
+    color:var(--blue);
 }
 
 a:hover {
