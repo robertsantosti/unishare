@@ -1,0 +1,124 @@
+.hide-desktop {
+  display: none;
+}
+
+.hide-mobile {
+  display: inline;
+}
+
+.hide-mobile {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 300;
+  opacity: 0.75;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn.btn-blue {
+  background-color: var(--blue);
+  border: none;
+  color: #fff;
+}
+
+.btn.btn-outline-blue {
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  background-color: #fff;
+}
+
+.btn.btn-outline-blue:hover {
+  border: none;
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.btn.btn-outline-grey {
+  border: 1px solid var(--grey);
+  color: var(--grey);
+  background-color: #fff;
+}
+
+.btn.btn-outline-grey:hover {
+  border: none;
+  background-color: var(--grey);
+  color: #fff;
+}
+
+.btn.btn-menu-mobile {
+  padding: 0;
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: var(--grey);
+}
+
+.active {
+  font-weight: 700;
+  color: var(--grey) !important;
+}
+
+.box-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-input input {
+  height: 3rem;
+  padding-left: 0.5rem;
+}
+
+.box-input textarea {
+  height: 10rem;
+  padding: 0.5rem;
+}
+
+.menu-mobile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 4.35rem;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  align-items: center;
+}
+
+.menu-mobile a {
+  padding: 1rem 0;
+  font-weight: 300;
+  background-color: var(--blue);
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  text-align: center;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
