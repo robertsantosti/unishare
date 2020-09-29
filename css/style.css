@@ -233,7 +233,10 @@ body {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-
+#app.main.profile .profile-wrapper h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
 #app.main.profile .profile-wrapper article {
   display: flex;
   justify-content: center;
