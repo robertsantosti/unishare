@@ -107,6 +107,7 @@
     align-items: center;
     width: 100%;
     position: fixed;
+    z-index: 9999;
   }
 
   #app main {
@@ -199,6 +200,44 @@
   #app.main.principal .content-wrapper .room-wrapper,
   #app.main.profile .content-wrapper .liked-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  #app.main.profile main {
+    padding: 0;
+  }
+
+  #app.main.profile .profile-wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #app.main.profile .profile-wrapper h1:first-child {
+    margin-bottom: 1rem;
+  }
+
+  #app.main.profile .profile-wrapper article {
+    height: 100%;
+    padding: 1rem 0;
+  }
+
+  #app.main.profile .profile-wrapper article form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #app.main.profile .profile-wrapper article form .box-input {
+    width: 100%;
+  }
+
+  #app.main.profile .content-wrapper {
+    width: 100%;
+  }
+
+  #app.main.profile .content-wrapper h2 {
+    font-size: 1.5rem;
   }
 
   .search-wrapper input {
