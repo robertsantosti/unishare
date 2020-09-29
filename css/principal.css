@@ -15,56 +15,59 @@
     --blue: #38b6ff;
 
 }
-
-body, html {
+html, body {
+    width: 100%!important;
     height: 100%;
-    
+    margin: 0;
+}
+#check{
+    display: none;
 }
 
 
-#app {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: 300;
-}
 
-#app header {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    padding: 1rem 10%;
-}
-
-
-#app.main header {
-    justify-content: space-between;
+header{
     align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: var(--blue);
-}
-
-#app.main header .logo a {
-    width: 50%;
-}
-
-#app.main header nav{
-    width: 50%;
-}
-
-#app.main header nav ul {
     display: flex;
-    justify-content: space-around;
-    list-style: none;
-    font-size: 1.25rem;
+    justify-content: space-between;
+
 }
 
-#app.main header nav ul li a {
+header img{
+    margin: 0 auto;
+    margin-left: 30px;
+
+}
+.menu{
+    width: 50%;
+    padding: 30px;
+
+}
+
+
+ul{
+    list-style: none;
+    font-size: 20px;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+ul li a {
+    text-decoration: none;
     color:#FFF;
     transition: .5s;
+
 }
 
-#app.main header nav ul li a:hover {
+
+header nav ul li a:hover {
     color: var(--grey);
 }
 
@@ -81,37 +84,37 @@ section {
     
 }
 
-.pesquisa {
-    
+.input-pesquisa {
+    width: 350px;
     display: flex;
 
     
 }
-.container-pai {
+.container {
+
     display: flex;
     justify-content: center;
+
 }
 .container-input-button { 
 
-    width: 70%;
+    width: 80%;
     height: 45px;
     display: flex;
-    justify-content: space-around;
-
-    
+    justify-content: space-around;  
 
 }
 .container-input-button p {
     font-size: 25px;
-    margin-top: 10px;
+    margin: 0px 20px;
 }
 
 #texto-input {
-    width: 300px;
+    width: 320px;
     height: 45px;
     font-family: 'Poppins', sans-serif;
     background-color: transparent;
-    background: var(--blue);
+    background: #D5F0FF;
     border: none;
     font-size: 20px;
     padding: 10px;
@@ -125,24 +128,31 @@ section {
     height: 45px;
     border: none;
     background-color: transparent;
-    background: var(--blue);
+    background: #D5F0FF;
     padding: 2px;
     border-left: 1px solid var(--grey);
     outline-style: none;
     
+}
+
+.btn-pesquisa:hover {
+    background-color: lightskyblue;
 }
 .img-pesquisa {
     width: 25px;
     height: 100%;
 }
 
+
+
 .btn-anuncie {
-    width: 350px;
+    width: 300px;
+    height: 45px;
     border: none;
     border-radius: 20px;
     background-color: var(--green);
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     outline-style: none;
     
 }
