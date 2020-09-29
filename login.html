@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel='stylesheet' href='css/login.css'>
-    <link rel='stylesheet' href='css/login-responsive.css'>
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/login-responsive.css" />
 
     <title>UniShare</title>
-    <link rel='shortcut icon' href=''>
-</head>
-<body>
-    <div class='container'>
-        <div class = 'sub-container'>
-            <form class='form-login' action="" method='POST'>
-                <h1>Entrar</h1>
-                <input type="email" name='user-email' id='user-email' Placeholder="E-mail" required>
-                <input type="password" name='senha' id='senha' Placeholder='Senha' required>
-                <a href='esqueceu-senha/rec-senha.html' id='esqueceu-senha'>Esqueceu sua senha?</a>
-                <button class='btn-login'>LOGIN</button>
-                <p>Ainda não tem conta? <a>Cadastre-se.</a></p>
-            </form>
-            <img src="img/logo-uniShare.png" alt="Logo uniShare">
-        </div>
+    <link rel="shortcut icon" href="" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sub-container">
+        <form class="form-login" id="form-login" method="POST">
+          <h1>Entrar</h1>
+          <input
+            type="email"
+            name="user-email"
+            id="user-email"
+            placeholder="E-mail"
+            required
+          />
+          <input
+            type="password"
+            name="senha"
+            id="senha"
+            placeholder="Senha"
+            required
+          />
+          <a href="esqueceu-senha/rec-senha.html" id="esqueceu-senha"
+            >Esqueceu sua senha?</a
+          >
+          <button type="submit" class="btn-login">LOGIN</button>
+          <p>Ainda não tem conta? <a>Cadastre-se.</a></p>
+        </form>
+        <img src="img/logo-uniShare.png" alt="Logo uniShare" />
+      </div>
     </div>
     <div class="decoration">
-        <h2>Fala, universitário!</h2> 
-        <img src="img/Login-pana.png" alt="Imagem de login">
+      <h2>Fala, universitário!</h2>
+      <img src="img/Login-pana.png" alt="Imagem de login" />
     </div>
-</body>
+  </body>
 </html>
