@@ -1,88 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
 
-    <title>UniShare | Meu Perfil</title>
-</head>
-<body>
+    <title>UniShare | Contato</title>
+  </head>
+  <body>
     <div id="app" class="main contact">
-        <header>
-            <a href="" class="logo">
-                <img src="img/logo-branca.svg" alt="UniShare">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./contact.html">Contato</a></li>
-                    <li><a href="user-profile.html" class="active">Meu Perfil</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-        <section class="contact-wrapper">
-        <article>
-            <form action="" class="contact-form">
-                <h1>Contato</h1>
-                <br>    
-                <p>Deixe uma mensagem e entraremos em contato</p>
-                <br>
-                <div class="box-input">
-                    <input type="text" name="name" id="name" placeholder="Seu nome" required/>
-                </div>
-                <br>
+      <header>
+        <a href="" class="logo">
+          <img src="img/logo-branca.svg" alt="UniShare" />
+        </a>
 
-                <div class="box-input">
-                    <input type="email" name="email" id="email" placeholder="Seu e-mail" required/>
-                </div>
-                <br>
+        <nav aria-label="Menu Desktop" class="hide-mobile">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./contact.html" class="active">Contato</a></li>
+            <li><a href="user-profile.html">Meu Perfil</a></li>
+          </ul>
+        </nav>
 
-                <div class="box-input">
-                    <textarea name="mensage" id="mensage" placeholder="Mensagem"></textarea>
-                </div>
-                <br>
+        <button
+          id="menu-mobile"
+          class="btn btn-menu-mobile hide-tablet hide-desktop"
+        >
+          <span class="fas fa-bars" id="icon-btn-menu"></span>
+        </button>
 
-                <div class="submit">
-                    <button type="submit" class="btn btn-blue">ENVIAR</button>
-                </div>
-            </form>     
-        </article>
-        <article class="article2">
-            <p>Quer conversar por mensagem?</p>
-            <br>
-    
-            <br>
-            <div>
-                <img src="/img/icons8-whatsapp-2401.svg" alt="Whatsapp">
-            </div>
-        </article>
+        <div aria-label="Menu Mobile" class="menu-mobile hide">
+          <a href="./index.html">Home</a>
+          <a href="./contact.html">Contato</a>
+          <a href="user-profile.html">Meu Perfil</a>
+        </div>
+      </header>
+      <main>
+        <section>
+          <h1>Contato</h1>
+          <p>Deixe uma mensagem e entraremos em contato</p>
+
+          <div class="contact-wrapper">
+            <form action="">
+              <div class="box-input">
+                <label for="name" class="hide">Nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Seu nome"
+                  required
+                />
+              </div>
+              <div class="box-input">
+                <label for="email" class="hide">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Seu e-mail"
+                  required
+                />
+              </div>
+            </form>
+          </div>
         </section>
-        </main> 
-        <footer>
-            <div class="logo hide-mobile hide-tablet">
-                <img src="img/logo-branca.svg" alt="UniShare">
+        <!--
+                   <section class="contact-wrapper">
+          <article>
+            <form action="" class="contact-form">
+              <h1>Contato</h1>
+              <br />
+              <p>Deixe uma mensagem e entraremos em contato</p>
+              <br />
+              <div class="box-input">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Seu nome"
+                  required
+                />
+              </div>
+              <br />
+
+              <div class="box-input">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Seu e-mail"
+                  required
+                />
+              </div>
+              <br />
+
+              <div class="box-input">
+                <textarea
+                  name="mensage"
+                  id="mensage"
+                  placeholder="Mensagem"
+                ></textarea>
+              </div>
+              <br />
+
+              <div class="submit">
+                <button type="submit" class="btn btn-blue">ENVIAR</button>
+              </div>
+            </form>
+          </article>
+          <article class="article2">
+            <p>Quer conversar por mensagem?</p>
+            <br />
+
+            <br />
+            <div>
+              <img src="/img/icons8-whatsapp-2401.svg" alt="Whatsapp" />
             </div>
-            <div class="social-media">
-                <span class="fab fa-whatsapp"></span>
-                <span class="fab fa-instagram"></span>
-                <span class="fab fa-twitter"></span>
-                <span class="fab fa-linkedin-in"></span>
-            </div>
-            <nav class="footer-menu">
-                <ul>
-                    <li><a href="">Sobre a uniShare</a></li>
-                    <li><a href="">Termos de uso</a></li>
-                    <li><span>uniShare<sup>&copy;</sup> 2020</span></li>
-                </ul>
-            </nav>
-        </footer>
+          </article>
+        </section>
+        -->
+      </main>
+      <footer>
+        <div class="logo hide-mobile hide-tablet">
+          <img src="./img/logo-branca.svg" alt="UniShare" />
+        </div>
+        <div class="social-media">
+          <span class="fab fa-whatsapp"></span>
+          <span class="fab fa-instagram"></span>
+          <span class="fab fa-twitter"></span>
+          <span class="fab fa-linkedin-in"></span>
+        </div>
+        <nav class="footer-menu">
+          <ul>
+            <li><a href="">Sobre a uniShare</a></li>
+            <li><a href="">Termos de uso</a></li>
+            <li>
+              <span>uniShare<sup>&copy;</sup> 2020</span>
+            </li>
+          </ul>
+        </nav>
+      </footer>
     </div>
 
-    <script src="https://kit.fontawesome.com/f82486fc2e.js" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/f82486fc2e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/script.js"></script>
+  </body>
 </html>
