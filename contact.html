@@ -19,7 +19,7 @@
 
         <nav aria-label="Menu Desktop" class="hide-mobile">
           <ul>
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="./principal.html">Home</a></li>
             <li><a href="./contact.html" class="active">Contato</a></li>
             <li><a href="user-profile.html">Meu Perfil</a></li>
           </ul>
@@ -33,7 +33,7 @@
         </button>
 
         <div aria-label="Menu Mobile" class="menu-mobile hide">
-          <a href="./index.html">Home</a>
+          <a href="./principal.html">Home</a>
           <a href="./contact.html">Contato</a>
           <a href="user-profile.html">Meu Perfil</a>
         </div>
@@ -65,7 +65,28 @@
                   required
                 />
               </div>
+              <div class="box-input">
+                <label for="message" class="hide">Mensagem</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Mensagem"
+                ></textarea>
+              </div>
+
+              <div class="submit">
+                <button type="submit" class="btn btn-blue">ENVIAR</button>
+              </div>
             </form>
+
+            <article>
+              <p>Quer conversar por mensagem?</p>
+              <div>
+                <span class="fas fa-chevron-down"></span>
+                <span class="fas fa-chevron-down"></span>
+              </div>
+              <span class="fab fa-whatsapp fa-5x text-green"></span>
+            </article>
           </div>
         </section>
         <!--

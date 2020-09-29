@@ -104,6 +104,18 @@
     padding: 0 10%;
   }
 
+  #app.main.contact .contact-wrapper {
+    flex-direction: column;
+  }
+
+  #app.main.contact .contact-wrapper article {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   #app.home main section {
     flex-direction: column;
   }
@@ -133,7 +145,13 @@
     margin-top: 2rem;
   }
 
-  #app.main.anunciar form {
+  #app.main.contact p {
+    text-align: justify;
+    font-size: 0.8rem;
+  }
+
+  #app.main.anunciar form,
+  #app.main.contact form {
     flex-direction: column;
     margin: 1rem 0;
   }
@@ -141,10 +159,6 @@
   #app.main.anunciar #form-anunciar div {
     flex-direction: column;
     padding: 0;
-  }
-
-  #app.main.anunciar form .box-input {
-    margin-bottom: 1rem;
   }
 
   .label-files {
@@ -167,11 +181,15 @@
   #app.main.anunciar form .submit .buttons button:last-child {
     margin: 0;
   }
-  /*adicionado para verificar visual do header dentro da tela mobile*/
-  #app header li {
-    display: none;
+
+  #app.main.principal .content-wrapper {
+    margin: 0;
   }
-  /*fim header mobile*/
+
+  #app.main.principal .content-wrapper .liked-wrapper,
+  #app.main.profile .content-wrapper .liked-wrapper {
+    grid-template-columns: 1fr;
+  }
 
   #app.detail-anuncio main section {
     flex-direction: column;

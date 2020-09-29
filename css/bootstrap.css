@@ -82,6 +82,7 @@
 .box-input {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .box-input input {
@@ -98,7 +99,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 4.35rem;
+  top: 4.1rem;
   background-color: #fff;
   width: 100%;
   left: 0;
