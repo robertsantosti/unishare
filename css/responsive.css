@@ -3,6 +3,10 @@
     display: none;
   }
 
+  #app.main header a {
+    font-size: 1rem;
+  }
+
   #app.home main section article.content {
     padding: 0 5%;
   }
@@ -83,16 +87,17 @@
     margin-bottom: 5%;
   }
 
-  .hide-desktop {
-    display: flex;
-  }
-
-  .hide-mobile {
-    display: none;
-  }
-
   #app header {
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+  }
+
+  #app main {
+    margin-top: 5rem;
+    padding: 0 10%;
   }
 
   #app.home main section {
@@ -122,6 +127,32 @@
 
   #app.home main section article.content .buttons {
     margin-top: 2rem;
+  }
+
+  #app.main.anunciar form {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  #app.main.anunciar form .box-input {
+    margin-bottom: 1rem;
+  }
+
+  #app.main.anunciar form .submit {
+    width: 100%;
+  }
+
+  #app.main.anunciar form .submit .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #app.main.anunciar form .submit .buttons button {
+    margin-bottom: 1rem;
+  }
+
+  #app.main.anunciar form .submit .buttons button:last-child {
+    margin: 0;
   }
   /*adicionado para verificar visual do header dentro da tela mobile*/
   #app header li {
@@ -164,5 +195,17 @@
   #app footer .footer-menu ul li {
     border: none;
     text-align: left;
+  }
+
+  .hide-desktop {
+    display: flex;
+  }
+
+  .hide-tablet {
+    display: flex;
+  }
+
+  .hide-mobile {
+    display: none;
   }
 }

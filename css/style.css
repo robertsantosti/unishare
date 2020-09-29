@@ -36,6 +36,15 @@ body {
   padding: 1rem 10%;
 }
 
+#app main h1,
+#app main h2,
+#app main h3,
+#app main h4,
+#app main h5,
+#app main h6 {
+  color: var(--grey);
+}
+
 #app.home header {
   align-items: center;
 }
@@ -395,4 +404,92 @@ body {
   height: 24.5rem;
   border-radius: 1rem;
   background-color: var(--grey);
+}
+
+#app.main.anunciar form {
+  width: 100%;
+  display: flex;
+}
+
+form .box-info {
+  display: flex;
+  justify-content: space-between;
+}
+form .box1 {
+  width: 100%;
+  display: block;
+  margin-right: 50px;
+}
+form .box1 input {
+  border: 1px solid var(--grey);
+  font-size: 16px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 40px;
+  padding: 20px;
+  outline: none;
+}
+.box1 input:focus {
+  border: 2px solid var(--blue);
+}
+form .box2 {
+  width: 100%;
+  display: block;
+}
+input[type="file"] {
+  display: none;
+}
+.box2 label {
+  width: 100%;
+  float: left;
+  display: block;
+  border: 1px solid var(--grey);
+  font-size: 16px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 18px;
+}
+.box2 label:hover {
+  border: 2px solid var(--blue);
+  color: var(--blue);
+}
+
+form .box2 textarea {
+  border: 1px solid var(--grey);
+  font-size: 16px;
+  width: 100%;
+  height: 140px;
+  margin-bottom: 40px;
+  padding: 20px;
+  outline: none;
+}
+.box2 textarea:focus {
+  border: 2px solid var(--blue);
+}
+
+.box-button {
+  display: flex;
+  justify-content: space-between;
+}
+.box-button div:nth-child(1) {
+  margin-right: 50px;
+}
+.box-button div {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+.box-button button {
+  background-color: var(--blue);
+  color: #fff;
+  border: 0;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 15px;
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
 }
