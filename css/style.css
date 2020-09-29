@@ -250,6 +250,9 @@ body {
   margin-top: 1rem;
 }
 
+#app.main.principal .content-wrapper{
+  padding: 2rem 10%;
+}
 #app.main.profile .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -265,7 +268,7 @@ body {
   font-size: 3rem;
   padding: 2rem 0;
 }
-
+#app.main.principal .content-wrapper .liked-wrapper,
 #app.main.profile .content-wrapper .liked-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -273,6 +276,7 @@ body {
   padding-bottom: 3rem;
 }
 
+#app.main.principal .content-wrapper .liked-wrapper .liked .liked-picture,
 #app.main.profile .content-wrapper .liked-wrapper .liked .liked-picture {
   width: 100%;
   height: 12rem;
@@ -280,11 +284,13 @@ body {
   background-color: var(--grey);
 }
 
+#app.main.principal .content-wrapper .liked-wrapper .liked .description,
 #app.main.profile .content-wrapper .liked-wrapper .liked .description {
   padding: 1rem 0;
   font-weight: 300;
 }
 
+#app.main.principal .content-wrapper .liked-wrapper .liked .description .value,
 #app.main.profile .content-wrapper .liked-wrapper .liked .description .value {
   font-weight: 700;
 }

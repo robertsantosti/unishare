@@ -7,6 +7,10 @@
     font-size: 1rem;
   }
 
+  #app.main header img {
+    height: 1rem;
+  }
+
   #app.home main section article.content {
     padding: 0 5%;
   }
