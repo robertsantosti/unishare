@@ -134,8 +134,17 @@
     margin: 1rem 0;
   }
 
+  #app.main.anunciar #form-anunciar div {
+    flex-direction: column;
+    padding: 0;
+  }
+
   #app.main.anunciar form .box-input {
     margin-bottom: 1rem;
+  }
+
+  .label-files {
+    align-self: center;
   }
 
   #app.main.anunciar form .submit {
