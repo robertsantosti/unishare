@@ -1,96 +1,76 @@
+function selectId(id) {
+    return document.getElementById(id);
+}
+
+function empty(id){
+    return selectId(id).value.trim() === '';
+}
+
+function checked(id){
+    return selectId(id).checked == false;
+}
+
+function errorMessage(message){
+    errorListUl.innerHTML += '<li>' + message + '</li>';
+}
+
+function habilityErrorList(errorListId){
+    return selectId(errorListId).style.display='flex';
+}
+
+
+
+// function selectField(id){
+//     let 
+// }
+
+
+const form = selectId('form-login')
+const nome = selectId('nome')
+const submitButton = selectId('btn-submit')
+const errorListUl = document.querySelector('#error-list ul');
+
+submitButton.addEventListener('click', function (event){
+    event.preventDefault();
+
+    //Se o formulário estiver correto, envie o formulário
+
+    
+    //Se não, habilite a div error-list e aponte os erros
+    habilityErrorList('error-list');
+
+    errorListUl.innerHTML = '';
+
+    if(empty('nome')){
+        errorMessage('Campo <b>NOME</b> não preenchido');
+
+    }
+
+    if(empty('sobrenome')){
+        errorMessage('Campo <b>SOBRENOME</b> não preenchido');
+    }
+
+    if(empty('dbirthdate')){
+        errorMessage('Campo <b>DATA DE NASCIMENTO</b> não preenchido');
+    }
+
+    if(empty('email')){
+        errorMessage('Campo <b>E-MAIL</b> não preenchido');
+    }
+
+    if(empty('senha')){
+        errorMessage('Campo <b>SENHA</b> não preenchido');
+    }
+
+    if(checked('agree-terms')){
+        errorMessage('Você deve <b>CONCORDAR COM OS TERMOS</b>');
+    }
+
+})
+
+
+
 const fields = document.querySelectorAll("[required]")
 
-//Função para validação dos campos
-function ValidateField(field) {
-    // logica para verificar se existem erros
-    function verifyErrors() {
-        let foundError = false;
+console.log(fields);
 
-        for(let error in field.validity) {
-            // se não for customError
-            // então verifica se tem erro
-            if (field.validity[error] && !field.validity.valid ) {
-                foundError = error
-            }
-        }
-        return foundError;
-    }
-
-    function customMessage(typeError) {
-        const messages = {
-            text: {
-                valueMissing: "Este campo é obrigatório"
-            },
-            email: {
-                valueMissing: "É obrigatório informar um e-mail",
-                typeMismatch: "Por favor, preencha um email válido"
-            },
-            password: {
-                valueMissing: 'O campo Senha é obrigatório'
-            },
-            date: {
-                valueMissing: 'O campo Data de Nascimento é obrigatório'
-            },
-            checkbox: {
-                valueMissing: 'Você deve concordar com os termos'
-            }
-        }
-
-        return messages[field.type][typeError]
-    }
-
-    function setCustomMessage(message) {
-        const spanError = field.parentNode.parentNode.querySelector("span.error")
-        
-        if (message) {
-            spanError.classList.add("active")
-            spanError.innerHTML = message
-        } else {
-            spanError.classList.remove("active")
-            spanError.innerHTML = ""
-        }
-    }
-
-    return function() {
-
-        const error = verifyErrors()
-
-        if(error) {
-            const message = customMessage(error)
-
-            field.style.borderColor = "red"
-            setCustomMessage(message)
-        } else {
-            field.style.borderColor = "var(--ligth-green)"
-            setCustomMessage()
-        }
-    }
-}
-
-
-function customValidation(event) {
-
-    const field = event.target
-    const validation = ValidateField(field)
-
-    validation()
-}
-
-for( let field of fields ){
-    field.addEventListener("invalid", event => { 
-        // eliminar o bubble
-        event.preventDefault()
-        customValidation(event)
-    })
-    field.addEventListener("focus", customValidation)
-    field.addEventListener('blur', customValidation)
-    field.addEventListener('none', customValidation)
-}
-
-//Prevet Defaut do submit
-document.querySelector("form").addEventListener("submit", event => {
-    // não vai enviar o formulário
-    event.preventDefault()
-
-    console.log('formulário enviado')
-})

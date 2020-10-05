@@ -47,7 +47,7 @@
         margin-bottom: 40px;
     }
 
-    .container form button {
+    .container form #btn-submit {
         margin-bottom: 50px;
     }
 }
