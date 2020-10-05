@@ -90,11 +90,6 @@ a {
     height: auto;
 }
 
-.fields input, .agree-terms{
-    /* margin-bottom: 20px; */
-    
-}
-
 .container #agree-terms {
     display: inline-block;
     width:20px;
@@ -118,7 +113,7 @@ form label {
     margin-bottom: 20px;
 }
 
-.container form button {
+.container form #btn-submit {
     display: block;
     margin-left:auto;
     margin-right: auto;
@@ -185,17 +180,28 @@ a:hover {
 }
 
 
-.form-login span.error {
-    display: flex;
-    width: 100%;
-    height: auto;
+#error-list {
+    display: none;
+    width: auto;
+    height:auto;
     padding: 0;
-
+    margin-bottom: 10px;
     background-color: rgba(255, 0, 0, 0.2);
 }
 
-.form-login span.error.active {
+#error-list button{
+    border: none;
+    background: none;
+    width: auto;
+    height: auto;
+}
+
+#error-list li{
+}
+
+
+/* div.error.active {
     border: 1px solid red;
     padding: 0.4em;
 }
-
+ */
