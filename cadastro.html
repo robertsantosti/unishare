@@ -9,20 +9,33 @@
 
     <title>UniShare</title>
     <link rel='shortcut icon' href=''>
+
+    <script src='./cadastro-script/cadastro.js' defer></script>
 </head>
 <body>
     <div class='container'>
         <div class = 'sub-container'>
             <form class='form-login' action="" method='POST'>
                 <h1>Cadastre-se</h1>
-                <input type="text" name='nome' id='nome' Placeholder="Nome" required>
-                <input type="text" name='sobrenome' id='sobrenome' Placeholder='Sobrenome' required>
-                <input type="date" name='birthdate' id='dbirthdate' Placeholder='Data de Nascimento' required>
-                <input type="email" name='email' id='email' Placeholder='E-mail' required>
-                <input type="password" name='senha' id='senha' Placeholder='Senha (pelo menos 8 caracteres)' required>
-                <input type="checkbox" name='agree-terms' id='agree-terms' required>
-                <label>Concordo com os <a>termos de uso</a> e privacidade da uniShare</label>
+                <div class='fields'>
+                    <input type="text" name='nome' id='nome' Placeholder="Nome" required>
+                    
+                    <input type="text" name='sobrenome' id='sobrenome' Placeholder='Sobrenome' required>
+           
+                    <input type="date" name='birthdate' id='dbirthdate' Placeholder='Data de Nascimento' required>
+                   
+                    <input type="email" name='email' id='email' Placeholder='E-mail' required>
+             
+                    <input type="password" name='senha' id='senha' Placeholder='Senha (pelo menos 8 caracteres)' required>
+                
+                    <div class='agree-terms'>
+                        <input type="checkbox" name='agree-terms' id='agree-terms' required>
+                        <label>Concordo com os <a>termos de uso</a> e privacidade da uniShare</label>
+                    </div>
+                    <span class='error'></span>
+                </div>
                 <button class='btn-login'>CADASTRE-SE</button>
+                
             </form>
             <img src="img/logo-uniShare.png" alt="Logo uniShare">
         </div>
