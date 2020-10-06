@@ -17,24 +17,22 @@
             <form id='form-login' action="" method='POST'>
                 <h1>Cadastre-se</h1>
                 <div class='fields'>
-                    <input type="text" name='nome' id='nome' Placeholder="Nome" required>
-                    <input type="text" name='sobrenome' id='sobrenome' Placeholder='Sobrenome' required>
-                    <input type="date" name='birthdate' id='dbirthdate' Placeholder='Data de Nascimento' required>
-                    <input type="email" name='email' id='email' Placeholder='E-mail' required>
-                    <input type="password" name='senha' id='senha' Placeholder='Senha (pelo menos 8 caracteres)' required data-min-length="8">
+                    <input class ='input' type="text" name='nome' id='nome' Placeholder="Nome" required>
+                    <span class='error' id='error-nome'></span>
+                    <input class ='input' type="text" name='sobrenome' id='sobrenome' Placeholder='Sobrenome' required>
+                    <span class='error' id='error-sobrenome'></span>
+                    <input class ='input' type="date" name='birthdate' id='dbirthdate' Placeholder='Data de Nascimento' required>
+                    <span class='error' id='error-data'></span>
+                    <input class ='input' type="email" name='email' id='email' Placeholder='E-mail' required>
+                    <span class='error' id='error-email'></span>
+                    <input class ='input' type="password" name='senha' id='senha' Placeholder='Senha (pelo menos 8 caracteres)' required data-min-length="8">
+                    <span class='error' id='error-senha'></span>
                     <div class='agree-terms'>
-                        <input type="checkbox" name='agree-terms' id='agree-terms' required>
+                        <input class ='input' type="checkbox" name='agree-terms' id='agree-terms' required checked>
                         <label>Concordo com os <a>termos de uso</a> e privacidade da uniShare</label>
                     </div>
+                    <span class='error' id='error-agree'></span>
                     
-                </div>
-                <div id='error-list' hidden>
-                    <ul>
-
-                    </ul>
-                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                        <span aria-hidden='true'>&times;</span>
-                    </button>
                 </div>
                 <button id='btn-submit' type='submit' class='btn-login'>CADASTRE-SE</button>
             </form>

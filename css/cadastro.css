@@ -60,10 +60,12 @@ body {
 
 .fields {
     width: 100%;
-    height: 400px;
+    height: 550px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 40px;
 }
 
 
@@ -199,6 +201,14 @@ a:hover {
 #error-list li{
 }
 
+.error {
+    display: none;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 0, 0, 0.2);
+    padding-left:20px;
+}
 
 /* div.error.active {
     border: 1px solid red;
