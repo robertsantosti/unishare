@@ -381,6 +381,7 @@ body {
 #app.detail-anuncio .anuncio-wrapper .text-anuncio h2 {
   color: #263238;
   text-align: right;
+  min-width: 23%;
 }
 
 #app.detail-anuncio .content-wrapper {
@@ -459,4 +460,76 @@ body {
   align-self: flex-end;
   cursor: pointer;
   color: var(--grey);
+}
+
+.anuncio-data p{
+  text-align: justify;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.logo-description{
+  display: inline-flex;
+  text-align: justify;
+  justify-content: space-evenly;
+  vertical-align: middle;
+}
+
+.modal-content p{
+  text-align: justify;
+  font-size: 0.8rem;
+  margin-top: 3%;
+}
+.unishare-sobre p{
+  font-size: 1rem;
+}
+
+.modal-content h3, .modal-content h4, .modal-content h5 {
+  font-weight: 550;
+  color: var(--grey);
+  font-size: 1.7rem;
+
+}
+.modal-content h6 {
+  font-weight: normal;
+  font-size: 80%;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.modal-content h4{
+  margin: 2% auto 5%;
+}
+.modal-content h5 {
+  margin: 2% auto 0;
+}
+
+.dev-team{
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6%;
+  padding-bottom: 2rem;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.dev-team p{
+  text-align: center;
+}
+.row{
+  width: 100%;
+  margin: 0;
+  margin-top: 3%;
+  align-items: center;
+}
+.dev-img{
+  border-radius: 50%;
+  width: 100%;
+}
+.dev-team a, .dev-team a:hover, .dev-team a:visited{
+  color: var(--grey);
+  text-decoration: none;
 }

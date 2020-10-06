@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-
-    <title>UniShare | Detalhe Anúncio</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <title>uniShare | Detalhe Anúncio</title>
   </head>
   <body>
     <div id="app" class="main detail-anuncio">
@@ -16,13 +14,27 @@
         <a href="" class="logo">
           <img src="img/logo-branca.svg" alt="UniShare" />
         </a>
-        <nav>
+
+        <nav aria-label="Menu Desktop" class="hide-mobile">
           <ul>
             <li><a href="./index.html">Inicio</a></li>
-            <li><a href="">Contato</a></li>
-            <li><a href="" class="active">Meu Perfil</a></li>
+            <li><a href="./contact.html">Contato</a></li>
+            <li><a href="./user-profile.html" class="active">Meu Perfil</a></li>
           </ul>
         </nav>
+
+        <button
+          id="menu-mobile"
+          class="btn btn-menu-mobile hide-tablet hide-desktop"
+        >
+          <span class="fas fa-bars" id="icon-btn-menu"></span>
+        </button>
+
+        <div aria-label="Menu Mobile" class="menu-mobile hide">
+          <a href="./index.html">Home</a>
+          <a href="./contact.html">Contato</a>
+          <a href="./user-profile.html">Meu Perfil</a>
+        </div>
       </header>
       <main>
         <section class="anuncio-wrapper">
@@ -55,6 +67,11 @@
               esse magnam veniam maxime ab. Qui voluptatum saepe dolor ipsa
               corporis velit perferendis.
             </p>
+            <h2>Contato:</h2>
+            <p>
+              <strong>Responsável: </strong>Usuário locatário</br>
+              <strong>e-mail:</strong> usuario@user.com.br
+            </p>
           </article>
         </section>
       </main>
@@ -71,8 +88,8 @@
         </div>
         <nav class="footer-menu">
           <ul>
-            <li><a href="">Sobre a uniShare</a></li>
-            <li><a href="">Termos de uso</a></li>
+            <li><a href="#modalSobre" data-toggle="modal" data-target="#modalSobre">Sobre a uniShare</a></li>
+            <li><a href="#modalTermos" data-toggle="modal" data-target="#modalTermos">Termos de uso</a></li>
             <li>
               <span>uniShare<sup>&copy;</sup> 2020</span>
             </li>
@@ -81,6 +98,117 @@
       </footer>
     </div>
 
+    <!-- Modais -->
+    <!-- Sobre nós -->
+    <div class="modal fade" id="modalSobre" tabindex="-1" role="dialog" aria-labelledby="titleModalSobre" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="titleModalSobre">Sobre nós</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="img/logo.svg" alt="UniShare" width="50%"/>
+            <div class="logo-description">
+              <h6>universitários<img src="img/arrow-green.png" alt="arrow-green" width="18%"/></h6>
+              <h6><img src="img/arrow-blue.png" alt="arrow-blue" width="15%"/>compartilhamento</h6>
+            </div>
+            <h5>Feita por universitários, </br>para universitários</br></h5>
+            <div class="unishare-sobre">
+              <p>
+                A uniShare surgiu através do Projeto Integrador de conclusão do curso de programação front-end do Facebook em parceria com a Digital House. </br>Ela resulta de uma ideia para auxiliar os universitários do Brasil inteiro a encontrarem e compartilharem um local confortável para sua instalação durante o período universitário.
+              </p>
+            </div>
+            
+            <h4>Dev Team</h4>
+            <div class="dev-team">
+              <div class="dev">
+                <img class="dev-img" src="img/Foto-Eduardo.png" alt="Foto-Eduardo"></br>
+                <a class="fab fa-github" href="https://github.com/eduperottoni"></a>
+                <a class="fab fa-linkedin" href="https://www.linkedin.com/in/eduardo-perottoni-6625871a3/"></a>
+                <p>
+                  Eduardo Perottoni</br>
+                  Caxias do Sul/RS
+                </p>
+              </div>
+              <div class="dev">
+                <img class="dev-img" src="img/Foto-Gabriel.png" alt="Foto-Gabriel"></br>
+                <a class="fab fa-github" href="https://github.com/briitogabriel"></a>
+                <a class="fab fa-linkedin" href="https://www.linkedin.com/in/brittogabriel/"></a>
+                <p>
+                  Gabriel Brito</br>
+                  Florianópolis/SC
+                </p>
+              </div>
+              <div class="dev">
+                <img class="dev-img" src="img/Foto-Maria-Vitoria.png" alt="Foto-Maria-Vitoria"></br>
+                <a class="fab fa-github" href=""></a>
+                <a class="fab fa-linkedin" href=""></a>
+                <p>
+                  Maria Vitória</br>
+                  Recife/PE
+                </p>
+              </div>
+              <div class="dev">
+                <img class="dev-img" src="img/Foto-Rayane.png" alt="Foto-Rayane"></br>
+                <a class="fab fa-github" href="https://github.com/raydevcp20"></a>
+                <a class="fab fa-linkedin" href="https://www.linkedin.com/in/rayane-cristina-19b2b0140/"></a>
+                <p>
+                  Rayane Cristina</br>
+                  Recife/PE
+                </p>
+              </div>
+              <div class="dev">
+                <img class="dev-img" src="img/Foto-Robert.png" alt="Foto-Robert"></br>
+                <a class="fab fa-github" href="https://github.com/robertsantosti"></a>
+                <a class="fab fa-linkedin" href="https://www.linkedin.com/in/robertsantosti/"></a>
+                <p>
+                  Robert Santos</br>
+                  Sabará/MG
+                </p>
+              </div>
+              <div class="dev">
+                <img class="dev-img" src="img/Foto-Sivaldo.png" alt="Foto-Sivaldo"></br>
+                <a class="fab fa-github" href="https://github.com/sivaldosilva"></a>
+                <a class="fab fa-linkedin" href="https://www.linkedin.com/in/sivaldosilva/"></a>
+                <p>
+                  Sivaldo Silva</br>
+                  Jundiaí/SP
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Termos de Uso -->
+    <div class="modal fade" id="modalTermos" tabindex="-1" role="dialog" aria-labelledby="titleModalTermos" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="titleModalTermos">Termos de Uso</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Ao utilizar a platarforma da UniShare, você estará concordando com os termos de utilização da mesma.</br></br>
+              Ao anunciar, você assume a responsabilidade de aluguel do local, em combinação com o usuário que alugou.</br></br>
+              Ao alugar, você assume a responsabilidade do pagamento do aluguel, em combinação com a pessoa que anunciou.</br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script
       src="https://kit.fontawesome.com/f82486fc2e.js"
       crossorigin="anonymous"
