@@ -84,7 +84,7 @@ function emailValidation(ID){
 //menos 8 caracteres
 function senhaValidation(ID){
     var senhaValidity = false;
-    if (ID.value.length>=8){
+    if (selectId(ID).value.length>=8){
         senhaValidity = true;
     }
     return senhaValidity;
@@ -112,7 +112,7 @@ submitButton.addEventListener('click', function (event){
     let emailValid = emailValidation('email');
     console.log(emailValid)
 
-    let senhaValid = senhaValidation(senha);
+    let senhaValid = senhaValidation('senha');
     console.log(senhaValid)
 
     if (inputsVazios.length==0 && checkValid==true 
@@ -121,9 +121,8 @@ submitButton.addEventListener('click', function (event){
             listaInputs[i].style.border = '2px solid var(--green)'
             spanList[i].style.display='none';
         }
-        
         //Envie o formulário
-    }else if (inputsVazios.length>0){
+    }else{
         if (empt('nome')){
             listaInputs[0].style.border ='2px solid red'
             spanList[0].style.display='flex';
@@ -152,6 +151,10 @@ submitButton.addEventListener('click', function (event){
             listaInputs[3].style.border ='2px solid red'
             spanList[3].style.display='flex';
             spanList[3].innerHTML = 'Este campo é obrigatório'
+        }else if (emailValid == false){
+            listaInputs[3].style.border ='2px solid red'
+            spanList[3].style.display='flex';
+            spanList[3].innerHTML = 'Informe um e-mail válido'
         }else{
             listaInputs[3].style.border = '2px solid var(--green)'
             spanList[3].style.display='none';
@@ -160,11 +163,15 @@ submitButton.addEventListener('click', function (event){
             listaInputs[4].style.border ='2px solid red'
             spanList[4].style.display='flex';
             spanList[4].innerHTML = 'Este campo é obrigatório'
+        }else if (senhaValid == false){
+            listaInputs[4].style.border ='2px solid red'
+            spanList[4].style.display='flex';
+            spanList[4].innerHTML = 'Sua senha deve ter no mínimo 8 caracteres'
         }else{
             listaInputs[4].style.border = '2px solid var(--green)'
             spanList[4].style.display='none';
         }
-    }    
+    }       
     //Trabalhando na concordância com os termos de uso
     if (checkValidation('agree-terms')==false){
         spanList[5].style.display='flex';
