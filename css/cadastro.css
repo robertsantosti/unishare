@@ -182,25 +182,6 @@ a:hover {
 }
 
 
-#error-list {
-    display: none;
-    width: auto;
-    height:auto;
-    padding: 0;
-    margin-bottom: 10px;
-    background-color: rgba(255, 0, 0, 0.2);
-}
-
-#error-list button{
-    border: none;
-    background: none;
-    width: auto;
-    height: auto;
-}
-
-#error-list li{
-}
-
 .error {
     display: none;
     align-items: flex-start;

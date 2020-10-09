@@ -21,12 +21,14 @@
                     <span class='error' id='error-nome'></span>
                     <input class ='input' type="text" name='sobrenome' id='sobrenome' Placeholder='Sobrenome' required>
                     <span class='error' id='error-sobrenome'></span>
-                    <input class ='input' type="date" name='birthdate' id='dbirthdate' Placeholder='Data de Nascimento' required>
+                    <input class='input' placeholder="Data de Nascimento" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date-nasc" required>
                     <span class='error' id='error-data'></span>
                     <input class ='input' type="email" name='email' id='email' Placeholder='E-mail' required>
                     <span class='error' id='error-email'></span>
                     <input class ='input' type="password" name='senha' id='senha' Placeholder='Senha (pelo menos 8 caracteres)' required data-min-length="8">
                     <span class='error' id='error-senha'></span>
+                    <input class ='input' type="password" name='senha-confirmation' id='senha-confirmation' Placeholder='Confirme sua senha' required data-min-length="8">
+                    <span class='error' id='error-senha-confirmation'></span>
                     <div class='agree-terms'>
                         <input class ='input' type="checkbox" name='agree-terms' id='agree-terms' required checked>
                         <label>Concordo com os <a>termos de uso</a> e privacidade da uniShare</label>
@@ -44,6 +46,6 @@
         <img src="img/cadastro.png" alt="Imagem de cadastro">
     </div>
 
-    <script src='./cadastro-script/cadastro.js'></script>
+    <script src='./scripts/cadastro.js'></script>
 </body>
 </html>
