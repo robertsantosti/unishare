@@ -1,6 +1,6 @@
 //Função para seleção de elementos por id
-function selectId(element_id) {
-    return document.getElementById(element_id);
+function selectId(elementId) {
+    return document.getElementById(elementId);
 }
 
 //Definindo as variáveis que passarão por validação
