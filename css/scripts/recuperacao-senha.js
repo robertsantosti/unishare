@@ -4,9 +4,9 @@ function selectId(elementId) {
 }
 
 //Definindo as variáveis que passarão por validação
-const form = selectId('form-login')
-const email = selectId('email')
-const submitButton = selectId('btn-submit')
+const form = selectId('form-recuperacao')
+const email = selectId('user-email')
+const recuperationButton = selectId('btn-redefine')
 
 // FUNÇÕES DE VALIDAÇÃO 
 
@@ -32,58 +32,40 @@ function emailValidation(emailElement){
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
 
 //Função que habilita o span de erro
-function habilityErrorSpan(spanListElement){
-    return spanListElement.style.display='flex';
+function habilityErrorSpan(element){
+    return element.style.display='flex';
 }
 
 //Função que desabilita o span de erro
-function disabilityErrorSpan(spanListElement){
-    return spanListElement.style.display='none';
+function disabilityErrorSpan(element){
+    return element.style.display='none';
 }
 
 //Função que valida o campo 
-function fieldValid(inputsListElement){
-    return inputsListElement.style.border = '2px solid var(--green)'
+function fieldValid(element){
+    return element.style.border = '2px solid var(--green)'
 }
 
 //Função que desvalida o campo
-function fieldInvalid(inputsListElement){
-    return inputsListElement.style.border = '2px solid red'
+function fieldInvalid(element){
+    return element.style.border = '2px solid red'
 }
 
 //Função que define a mensagem de erro
-function errorMessage(spanListElement,message){
-    return spanListElement.innerHTML = message;
+function errorMessage(element,message){
+    return element.innerHTML = message;
 }
 
 //Evento de clique no botão de submit
-submitButton.addEventListener('click', function (event){
+recuperationButton.addEventListener('click', function (event){
     event.preventDefault();
-    let emptyInputs = emptyFields(inputsList);
-    console.log(emptyInputs);
 
     let emailValid = emailValidation(email);
     console.log(emailValid)
 
-    let senhaValid = senhaValidation(senha);
-    console.log(senhaValid)
-
-    let senhaConfirmValid = senhaConfirmationValidation(senhaConfirm);
-    console.log(senhaConfirmValid)
-
-    let checkValid = checkValidation(agreeTerms);
-    console.log(checkValid)
-
-    if (emptyInputs.length==0 && checkValid 
-        && emailValid && senhaValid && senhaConfirmValid 
-        //adicionar condicao de email não repetido no BD//
+    if (emailValid
+        //adicionar condicao de email  no BD//
         ){
-        for (let i=0;i<inputsList.length;i++){
-            for (let c=0;c<spanList.length;c++){
-                inputsList[i].style.border = '2px solid var(--green)'
-                spanList[c].style.display='none';
-            }
-        }
         //Fazer o cadastro do usuário
         console.log('Cadastrei o usuário')
     }else{
@@ -97,48 +79,16 @@ for(let cont = 0; cont<inputsList.length;cont++){
     formValidation();
 })}
 
+
 function formValidation(){
-    for (let i=0;i<inputsList.length;i++){
-        let campoVazio = emptyValidation(inputsList[i]);
-        let emailCorreto = emailValidation(inputsList[i]);
-        let senhaCorreta = senhaValidation(inputsList[i]);
-        let senhaConfirmCorreta = senhaConfirmationValidation(inputsList[i]);
-        let campoChecado = checkValidation(inputsList[i]);
-        if (campoVazio == true){
-            fieldInvalid(inputsList[i]);
-            habilityErrorSpan(spanList[i]);
-            errorMessage(spanList[i],'Este campo é obrigatório');
-        }else if(emailCorreto == false){
-            fieldInvalid(inputsList[i]);
-            habilityErrorSpan(spanList[i]);
-            errorMessage(spanList[i],'Informe um e-mail válido');
-        }else if(senhaCorreta == false){
-            fieldInvalid(inputsList[i]);
-            habilityErrorSpan(spanList[i]);
-            errorMessage(spanList[i],'Sua senha deve ter no mínimo 8 caracteres');
-        }else if(senhaConfirmCorreta == false){
-            fieldInvalid(inputsList[i]);
-            habilityErrorSpan(spanList[i]);
-            errorMessage(spanList[i],'As senhas digitadas não são iguais');
-        }else if(campoChecado == false){
-            fieldInvalid(inputsList[i]);
-            habilityErrorSpan(spanList[i]);
-            errorMessage(spanList[i],'Você deve condcordar com os termos de uso');
-        }else if(campoVazio == false){
-            fieldValid(inputsList[i]);
-            disabilityErrorSpan(spanList[i]);
-        }else if(emailCorreto == false){
-            fieldValid(inputsList[i]);
-            disabilityErrorSpan(spanList[i]);
-        }else if(senhaCorreta == false){
-            fieldValid(inputsList[i]);
-            disabilityErrorSpan(spanList[i]);
-        }else if(senhaConfirmCorreta == false){
-            fieldValid(inputsList[i]);
-            disabilityErrorSpan(spanList[i]);
-        }else if(campoChecado == false){
-            fieldValid(inputsList[i]);
-            disabilityErrorSpan(spanList[i]);
-        }
-    }  
+    let emailCorreto = emailValidation(inputsList[i]);
+    if(emailCorreto == false){
+        fieldInvalid(inputsList[i]);
+        habilityErrorSpan(spanList[i]);
+        errorMessage(spanList[i],'Informe um e-mail válido');
+    }else if(emailCorreto == true){
+        fieldValid(inputsList[i]);
+        disabilityErrorSpan(spanList[i]);
+    }
+     
 }
