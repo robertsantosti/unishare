@@ -15,7 +15,7 @@ const agreeTerms = selectId('agree-terms')
 const submitButton = selectId('btn-submit')
 
 //Pegando lista de inputs
-const inputsList = document.querySelectorAll("[required]");
+const inputsList = [nome, sobrenome, dataNasc, email, senha, senhaConfirm, agreeTerms];
 console.log(inputsList)
 
 //Pegando lista de spans para imprimir o erro
@@ -31,25 +31,42 @@ function emptyValidation(element){
 
 //Função que verifica se o campo está checked (para o checkbox)
 function checkValidation(checkboxElement){
-    return checkboxElement.checked == true;
+    if (checkboxElement == agreeTerms){
+        return checkboxElement.checked;
+    }
 }
 
 //Função que confere se o e-mail é valido
 function emailValidation(emailElement){
-    var emailValidity = false;
-    if (emailElement.validity.valid){
-    emailValidity = true;
+    if(emailElement == email){
+        if (emailElement.validity.valid){
+            return true;
+        }else{
+            return false;
+        }
     }
-    return emailValidity;
 }
 
 //Função que confere se a senha tem ao menos 8 caracteres
 function senhaValidation(passwordElement){
-    var senhaValidity = false;
-    if (passwordElement.value.length>=8){
-        senhaValidity = true;
-    }
-    return senhaValidity;
+    if(passwordElement == senha){
+        if (passwordElement.value.length>=8){
+            return true;
+        }else{
+            return false;
+        }
+    }    
+}
+
+//Função que valida a senha de confirmação
+function senhaConfirmationValidation(passwordConfirmationElement){
+    if(passwordConfirmationElement == senhaConfirm){
+        if (senha.value == passwordConfirmationElement.value){
+            return true;
+        }else{
+            return false;
+        }
+    }    
 }
 
 //Função que confere se há inputs vazios e retorna array com os vazios
@@ -63,53 +80,126 @@ function emptyFields(array){
     return listaVazios;
 }
 
+//Função que confere se o elemento email já existe no Banco de Dados
+
+
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
 
 //Função que habilita o span de erro
-function habilityErrorSpan(spanListIndex){
-    return selectId(spanList[spanListIndex]).style.display='flex';
+function habilityErrorSpan(spanListElement){
+    return spanListElement.style.display='flex';
 }
 
 //Função que desabilita o span de erro
-function disabilityErrorSpan(spanListIndex){
-    return selectId(spanList[spanListIndex]).style.display='none';
+function disabilityErrorSpan(spanListElement){
+    return spanListElement.style.display='none';
 }
 
 //Função que valida o campo 
-function fieldValid(inputsListIndex){
-    return selectId(inputsList[inputsListIndex]).style.border = '2px solid var(--green)'
+function fieldValid(inputsListElement){
+    return inputsListElement.style.border = '2px solid var(--green)'
+}
+
+//Função que desvalida o campo
+function fieldInvalid(inputsListElement){
+    return inputsListElement.style.border = '2px solid red'
 }
 
 //Função que define a mensagem de erro
-function errorMessage(message){
-    return span.innerHTML = message;
+function errorMessage(spanListElement,message){
+    return spanListElement.innerHTML = message;
 }
-
 
 //Evento de clique no botão de submit
 submitButton.addEventListener('click', function (event){
     event.preventDefault();
-
     let emptyInputs = emptyFields(inputsList);
     console.log(emptyInputs);
 
+    let emailValid = emailValidation(email);
+    console.log(emailValid)
+
+    let senhaValid = senhaValidation(senha);
+    console.log(senhaValid)
+
+    let senhaConfirmValid = senhaConfirmationValidation(senhaConfirm);
+    console.log(senhaConfirmValid)
+
+    let checkValid = checkValidation(agreeTerms);
+    console.log(checkValid)
+
+    if (emptyInputs.length==0 && checkValid 
+        && emailValid && senhaValid && senhaConfirmValid 
+        //adicionar condicao de email não repetido no BD//
+        ){
+        for (let i=0;i<inputsList.length;i++){
+            for (let c=0;c<spanList.length;c++){
+                inputsList[i].style.border = '2px solid var(--green)'
+                spanList[c].style.display='none';
+            }
+        }
+        //Fazer o cadastro do usuário
+        console.log('Cadastrei o usuário')
+    }else{
+        formValidation();
+    }
 })
-//     let checkValid = checkValidation('agree-terms');
-//     console.log(checkValid)
 
-//     let emailValid = emailValidation('email');
-//     console.log(emailValid)
+for(let cont = 0; cont<inputsList.length;cont++){
+    inputsList[cont].addEventListener('blur', function (event){
+    event.preventDefault();
+    formValidation();
+})}
 
-//     let senhaValid = senhaValidation('senha');
-//     console.log(senhaValid)
+function formValidation(){
+    for (let i=0;i<inputsList.length;i++){
+        let campoVazio = emptyValidation(inputsList[i]);
+        let emailCorreto = emailValidation(inputsList[i]);
+        let senhaCorreta = senhaValidation(inputsList[i]);
+        let senhaConfirmCorreta = senhaConfirmationValidation(inputsList[i]);
+        let campoChecado = checkValidation(inputsList[i]);
+        if (campoVazio == true){
+            fieldInvalid(inputsList[i]);
+            habilityErrorSpan(spanList[i]);
+            errorMessage(spanList[i],'Este campo é obrigatório');
+        }else if(emailCorreto == false){
+            fieldInvalid(inputsList[i]);
+            habilityErrorSpan(spanList[i]);
+            errorMessage(spanList[i],'Informe um e-mail válido');
+        }else if(senhaCorreta == false){
+            fieldInvalid(inputsList[i]);
+            habilityErrorSpan(spanList[i]);
+            errorMessage(spanList[i],'Sua senha deve ter no mínimo 8 caracteres');
+        }else if(senhaConfirmCorreta == false){
+            fieldInvalid(inputsList[i]);
+            habilityErrorSpan(spanList[i]);
+            errorMessage(spanList[i],'As senhas digitadas não são iguais');
+        }else if(campoChecado == false){
+            fieldInvalid(inputsList[i]);
+            habilityErrorSpan(spanList[i]);
+            errorMessage(spanList[i],'Você deve condcordar com os termos de uso');
+        }else if(campoVazio == false){
+            fieldValid(inputsList[i]);
+            disabilityErrorSpan(spanList[i]);
+        }else if(emailCorreto == false){
+            fieldValid(inputsList[i]);
+            disabilityErrorSpan(spanList[i]);
+        }else if(senhaCorreta == false){
+            fieldValid(inputsList[i]);
+            disabilityErrorSpan(spanList[i]);
+        }else if(senhaConfirmCorreta == false){
+            fieldValid(inputsList[i]);
+            disabilityErrorSpan(spanList[i]);
+        }else if(campoChecado == false){
+            fieldValid(inputsList[i]);
+            disabilityErrorSpan(spanList[i]);
+        }
+    }  
+}
 
-//     if (inputsVazios.length==0 && checkValid==true 
-//         && emailValid==true && senhaValid==true){
-//         for (let i=0;i<listaInputs.length;i++){
-//             listaInputs[i].style.border = '2px solid var(--green)'
-//             spanList[i].style.display='none';
-//         }
-//         //Envie o formulário
+
+   
+//         
 //     }else{
 //         if (empt('nome')){
 //             listaInputs[0].style.border ='2px solid red'
