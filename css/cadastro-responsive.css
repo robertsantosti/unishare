@@ -31,7 +31,7 @@
     }
     .container h1 {
         font-size: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .container p {
@@ -45,6 +45,10 @@
     .container img {
         width: 30%;
         margin-bottom: 40px;
+    }
+
+    .container form input{
+        height: 40px;
     }
 
     .container form #btn-submit {

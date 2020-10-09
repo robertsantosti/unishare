@@ -52,7 +52,7 @@ body {
 .container form input {
     display: block;
     width: 100%;
-    height: 50px;
+    height: 45px;
     padding-left: 10px;
     font-size:20px;
     border: 2px solid var(--ligth-grey);
@@ -87,7 +87,7 @@ a {
 
 .sub-container {
     /*margin: 200px auto 130px auto;*/
-    margin: 150px auto 0 auto;
+    margin: 70px auto 0 auto;
     width: 75%;
     height: auto;
 }
@@ -119,7 +119,7 @@ form label {
     display: block;
     margin-left:auto;
     margin-right: auto;
-    margin-bottom: 160px;
+    margin-bottom: 100px;
     /* margin-top: 30px; */
     width: 100%;
     height: 60px;
@@ -177,11 +177,9 @@ a:hover {
     color:var(--blue);
 }
 
-.btn-login:hover {
+.container form #btn-submit:hover {
     background-color: var(--ligth-green);
 }
-
-
 
 .error {
     display: none;
