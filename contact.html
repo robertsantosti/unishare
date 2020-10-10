@@ -54,6 +54,7 @@
                   placeholder="Seu nome"
                   required
                 />
+                <span class='error' id='error-data'></span>
               </div>
               <div class="box-input">
                 <label for="email" class="hide">E-mail</label>
@@ -64,6 +65,7 @@
                   placeholder="Seu e-mail"
                   required
                 />
+                <span class='error' id='error-data'></span>
               </div>
               <div class="box-input">
                 <label for="message" class="hide">Mensagem</label>
@@ -72,10 +74,11 @@
                   id="message"
                   placeholder="Mensagem"
                 ></textarea>
+                <span class='error' id='error-data'></span>
               </div>
 
               <div class="submit">
-                <button type="submit" class="btn btn-blue">ENVIAR</button>
+                <button id = 'btn-submit' type="submit" class="btn btn-blue">ENVIAR</button>
               </div>
             </form>
 
@@ -228,5 +231,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/script.js"></script>
+    <script src="./scripts/contact.js"></script>
   </body>
 </html>
