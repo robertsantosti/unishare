@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='css/cadastro.css'>
+    <link rel='stylesheet' href='css/cadastro-responsive.css'>
+
+    <title>UniShare</title>
+    <link rel='shortcut icon' href=''>
+    
+</head>
+<body>
+    <div class='container'>
+        <div class = 'sub-container'>
+            <form id='form-login' action="" method='POST'>
+                <h1>Cadastre-se</h1>
+                <div class='fields'>
+                    <input class ='input' type="text" name='nome' id='nome' Placeholder="Nome" required>
+                    <span class='error' id='error-nome'></span>
+                    <input class ='input' type="text" name='sobrenome' id='sobrenome' Placeholder='Sobrenome' required>
+                    <span class='error' id='error-sobrenome'></span>
+                    <input class='input' placeholder="Data de Nascimento" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date-nasc" required>
+                    <span class='error' id='error-data'></span>
+                    <input class ='input' type="email" name='email' id='email' Placeholder='E-mail' required>
+                    <span class='error' id='error-email'></span>
+                    <input class ='input' type="password" name='senha' id='senha' Placeholder='Senha (pelo menos 8 caracteres)' required data-min-length="8">
+                    <span class='error' id='error-senha'></span>
+                    <input class ='input' type="password" name='senha-confirmation' id='senha-confirmation' Placeholder='Confirme sua senha' required data-min-length="8">
+                    <span class='error' id='error-senha-confirmation'></span>
+                    <div class='agree-terms'>
+                        <input class ='input' type="checkbox" name='agree-terms' id='agree-terms' required checked>
+                        <label>Concordo com os <a>termos de uso</a> e privacidade da uniShare</label>
+                    </div>
+                    <span class='error' id='error-agree'></span>
+                    
+                </div>
+                <button id='btn-submit' type='submit' class='button' >CADASTRE-SE</button>
+            </form>
+            <img src="img/logo-uniShare.png" alt="Logo uniShare">
+        </div>
+    </div>
+    <div class="decoration">
+        <h2>Olá, ainda não tem cadastro?</h2> 
+        <img src="img/cadastro.png" alt="Imagem de cadastro">
+    </div>
+
+    <script src='./scripts/cadastro.js'></script>
+</body>
+</html>
