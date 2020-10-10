@@ -19,7 +19,7 @@ function emailValidation(emailElement){
 }
 
 //Função que confere se a senha está correta segundo o BD
-function emailValidation(senhaElement){
+function senhaValidation(senhaElement){
 
 }
 
