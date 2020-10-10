@@ -40,6 +40,20 @@
     font-size: 0.75rem;
     width: 70%;
   }
+  .dev-team{
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 3%;
+    grid-column-gap: 10%;
+  }
+  .dev-team a{
+    font-size: 1.6em;
+    margin-top: 5%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+  .dev-team p{
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 700px) {
@@ -292,5 +306,44 @@
 
   .hide-mobile {
     display: none;
+  }
+
+  #app.detail-anuncio .anuncio-wrapper, #app.detail-anuncio .content-wrapper {
+    padding: 0;
+  }
+
+  .dev-team{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .modal-content h6 {
+    text-align: justify;
+    font-size: 0.8rem;
+  }
+  .modal-content h5{
+    font-size: 1.1rem;
+  }
+  .dev-team a{
+    font-size: 2em;
+  }
+  .modal-content p {
+    font-size: 1rem;
+  }
+  .dev img {
+    width: 80%;
+  }
+  .dev {
+    margin-bottom: 0.5rem;
+  }
+  .modal-body {
+    padding-bottom: 100%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .modal-content h6 {
+    font-size: 0.7rem;
+  }
+  .unishare-sobre p{
+    font-size: 0.8rem;
   }
 }
