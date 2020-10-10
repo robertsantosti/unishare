@@ -29,7 +29,7 @@ body {
 
 .container {
     width: 50%;
-    height: auto;
+    height: 100%;
     background-color: white;
     display: block;
     align-items: center;
@@ -39,8 +39,8 @@ body {
 
 .container h1 {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 45px;
+    margin-bottom: 10px;
+    font-size: 35px;
     color: var(--ligth-grey);
 }
 
@@ -52,7 +52,7 @@ body {
 .container form input {
     display: block;
     width: 100%;
-    height: 45px;
+    height: 35px;
     padding-left: 10px;
     font-size:20px;
     border: 2px solid var(--ligth-grey);
@@ -60,12 +60,13 @@ body {
 
 .fields {
     width: 100%;
-    height: 550px;
+    height: auto;
+    min-height: 400px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 40px;
+    padding-bottom:0px;
 }
 
 
@@ -87,7 +88,7 @@ a {
 
 .sub-container {
     /*margin: 200px auto 130px auto;*/
-    margin: 70px auto 0 auto;
+    margin: 30px auto 0 auto;
     width: 75%;
     height: auto;
 }
@@ -119,10 +120,10 @@ form label {
     display: block;
     margin-left:auto;
     margin-right: auto;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     /* margin-top: 30px; */
     width: 100%;
-    height: 60px;
+    height: 50px;
     background-color: var(--blue);
     box-shadow: none;
     border: none;
@@ -147,7 +148,7 @@ form label {
 
 .decoration h2 {
     text-align: right;
-    margin-top: 150px;
+    margin-top: 100px;
     margin-right: 5%;
     font-size: 40px;
     font-weight: bold;
@@ -155,7 +156,7 @@ form label {
 }
 
 .decoration img {
-    width:70%;
+    width: 60%;
     display: block;
     margin-left: auto;
     margin-right: auto;

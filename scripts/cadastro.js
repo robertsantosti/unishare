@@ -80,9 +80,6 @@ function emptyFields(array){
     return listaVazios;
 }
 
-//Função que confere se o elemento email já existe no Banco de Dados
-
-
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
 
 //Função que habilita o span de erro
@@ -109,6 +106,20 @@ function fieldInvalid(inputsListElement){
 function errorMessage(spanListElement,message){
     return spanListElement.innerHTML = message;
 }
+
+//Validação com a API
+// const url = 'https://xxxxxxxxxxxxxxx'
+
+// async function getEmail (url){
+//     const response = await fetch(url);
+//     const result = await response.json();
+// }
+
+// fetch (url.email(email.value))
+//     .then ()
+//     .then ()
+
+// function emailApiValidation()
 
 //Evento de clique no botão de submit
 submitButton.addEventListener('click', function (event){
@@ -138,8 +149,9 @@ submitButton.addEventListener('click', function (event){
                 spanList[c].style.display='none';
             }
         }
-        //Fazer o cadastro do usuário
-        console.log('Cadastrei o usuário')
+        //Dar um POST na API com os dados do formulário
+        // await fetch
+        // console.log('Cadastrei o usuário')
     }else{
         formValidation();
     }
