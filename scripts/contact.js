@@ -107,13 +107,14 @@ function formValidation(){
     for (let i=0;i<inputsList.length;i++){
 
         let campoVazio = emptyValidation(inputsList[i]);
+
         let emailCorreto = emailValidation(inputsList[i]);
 
-        if (campoVazio){
+        if (campoVazio == true){
             fieldInvalid(inputsList[i]);
             habilityErrorSpan(spanList[i]);
             errorMessage(spanList[i],'Este campo é obrigatório');
-        }else if(emailCorreto){
+        }else if(emailCorreto == false){
             fieldInvalid(inputsList[i]);
             habilityErrorSpan(spanList[i]);
             errorMessage(spanList[i],'Informe um e-mail válido');
