@@ -7,6 +7,9 @@ function selectId(elementId) {
 const form = selectId('form-recuperacao')
 const email = selectId('user-email')
 const recuperationButton = selectId('btn-redefine')
+const spanError = selectId('error-email')
+const subContainer = document.querySelector('.sub-container')
+
 
 // FUNÇÕES DE VALIDAÇÃO 
 
@@ -64,31 +67,39 @@ recuperationButton.addEventListener('click', function (event){
     console.log(emailValid)
 
     if (emailValid
-        //adicionar condicao de email  no BD//
+        //adicionar condicao de email no BD//
         ){
-        //Fazer o cadastro do usuário
-        console.log('Cadastrei o usuário')
+        //
+        console.log('O e-mail foi enviado')
+        form.style.display='none'
+        subContainer.innerHTML = '<p>Obrigado por entrar em contato!Retornaremos em breve...</p>'+ '<a id="back-to-start"href=""><button>Voltar para a tela inicial</button></a>'
     }else{
         formValidation();
     }
 })
 
-for(let cont = 0; cont<inputsList.length;cont++){
-    inputsList[cont].addEventListener('blur', function (event){
+email.addEventListener('blur', function (event){
     event.preventDefault();
     formValidation();
-})}
+})
 
 
 function formValidation(){
-    let emailCorreto = emailValidation(inputsList[i]);
-    if(emailCorreto == false){
-        fieldInvalid(inputsList[i]);
-        habilityErrorSpan(spanList[i]);
-        errorMessage(spanList[i],'Informe um e-mail válido');
+    let emailCorreto = emailValidation(email);
+    let campoVazio = emptyValidation(email)
+    //let emailInBd = 
+    //Adicionar condição de e-mail no BD
+    if(campoVazio){
+        fieldInvalid(email);
+        habilityErrorSpan(spanError);
+        errorMessage(spanError,'Este campo deve ser preenchido');
+    }else if (emailCorreto == false){
+        fieldInvalid(email);
+        habilityErrorSpan(spanError);
+        errorMessage(spanError,'Informe um e-mail válido');
     }else if(emailCorreto == true){
-        fieldValid(inputsList[i]);
-        disabilityErrorSpan(spanList[i]);
+        fieldValid(email);
+        disabilityErrorSpan(spanError);
     }
      
 }
