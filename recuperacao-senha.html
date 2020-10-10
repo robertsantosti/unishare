@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='css/recuperacao-senha.css'>
+    <link rel='stylesheet' href='css/recuperacao-senha-responsive.css'>
+
+    <title>UniShare</title>
+    <link rel='shortcut icon' href=''>
+</head>
+<body>
+    <div class='container'>
+        <div class = 'sub-container'>
+            <form id='form-recuperacao' class='form-recuperacao' action="" method='POST'>
+                <h1>Digite seu e-mail</h1>
+                <p>Confirme seu e-mail e enviaremos instruções</p>
+                <input type="email" name='user-email' id='user-email' Placeholder="E-mail" required>
+                <span class='error' id='error-email'></span>
+                <button class='btn-redefine' id='btn-redefine'>REDEFINIR MINHA SENHA</button>
+            </form>
+            <img src="img/logo-uniShare.png" alt="Logo uniShare">
+        </div>
+    </div>
+    <div class="decoration">
+        <h2>Esqueceu sua senha? Nós te ajudamos...</h2> 
+        <img src="img/forgot-password-img.png" alt="Imagem dde alguém que esqueceu sua senha">
+    </div>
+    <script src='./scripts/recuperacao-senha.js'></script>
+</body>
+</html>
