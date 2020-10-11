@@ -87,7 +87,7 @@ a {
 
 .sub-container {
     /*margin: 200px auto 130px auto;*/
-    margin: 150px auto 0 auto;
+    margin: 70px auto 0 auto;
     width: 75%;
     height: auto;
 }
@@ -119,7 +119,7 @@ form label {
     display: block;
     margin-left:auto;
     margin-right: auto;
-    margin-bottom: 305px;
+    margin-bottom: 70px;
     margin-top: 30px;
     width: 100%;
     height: 60px;
@@ -136,7 +136,7 @@ form label {
     display: block;
     margin-left:auto;
     margin-right: auto;
-    margin-bottom: 305px;
+    margin-bottom: 70px;
     margin-top: 30px;
     width: 100%;
     height: 60px;
@@ -165,7 +165,7 @@ form label {
 
 .decoration h2 {
     text-align: right;
-    margin-top: 150px;
+    margin-top: 70px;
     margin-right: 5%;
     font-size: 40px;
     font-weight: bold;
@@ -173,7 +173,7 @@ form label {
 }
 
 .decoration img {
-    width:70%;
+    width:65%;
     display: block;
     margin-left: auto;
     margin-right: auto;
