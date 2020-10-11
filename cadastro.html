@@ -6,6 +6,8 @@
 
     <link rel='stylesheet' href='css/cadastro.css'>
     <link rel='stylesheet' href='css/cadastro-responsive.css'>
+    <link rel='stylesheet' href='css/bootstrap.css'>
+   
 
     <title>UniShare | Cadastro</title>
     <link rel='shortcut icon' href=''>
@@ -31,7 +33,7 @@
                     <span class='error' id='error-senha-confirmation'></span>
                     <div class='agree-terms'>
                         <input class ='input' type="checkbox" name='agree-terms' id='agree-terms' required checked>
-                        <label>Concordo com os <a>termos de uso</a> e privacidade da uniShare</label>
+                        <label>Concordo com os <a href="#modalTermos" data-toggle="modal" data-target="#modalTermos">Termos de uso</a> e privacidade da uniShare</label>
                     </div>
                     <span class='error' id='error-agree'></span>
                     
@@ -46,6 +48,26 @@
         <img src="img/cadastro.png" alt="Imagem de cadastro">
     </div>
 
+    <!-- Termos de Uso -->
+    <div class="modal fade" id="modalTermos" tabindex="-1" role="dialog" aria-labelledby="titleModalTermos" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="titleModalTermos">Termos de Uso</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Ao utilizar a platarforma da UniShare, você estará concordando com os termos de utilização da mesma.</br></br>
+                Ao anunciar, você assume a responsabilidade de aluguel do local, em combinação com o usuário que alugou.</br></br>
+                Ao alugar, você assume a responsabilidade do pagamento do aluguel, em combinação com a pessoa que anunciou.</br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src='./scripts/cadastro.js'></script>
 </body>
 </html>
