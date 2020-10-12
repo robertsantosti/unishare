@@ -133,7 +133,7 @@ submitButton.addEventListener('click', function (event){
             }
         }
         //Dar um POST na API com os dados do formulário
-        // await fetch
+        
         console.log('Anunciei o quarto')
     }else{
         formValidation();
