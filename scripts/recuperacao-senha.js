@@ -30,7 +30,36 @@ function emailValidation(emailElement){
 }
 
 //Função que confere se o elemento email já existe no Banco de Dados
+async function getEmail(){
+    let emailsApi = [];
 
+    await fetch(endpointUsers, {
+        method: 'GET',
+        mode: 'cors',
+    }).then(res => { return res.json()})
+    .then(data => {
+        for (let i=0;i<data.data;i++){
+           emailsApi.push(data[i].email); 
+        }
+    });
+
+    if (email.value in emailsApi){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Função que valida o e-mail
+function emailApiValidation(emailElement){
+    if(emailElement == email){
+        if (getEmail() == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
 
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
 
@@ -66,10 +95,9 @@ recuperationButton.addEventListener('click', function (event){
     let emailValid = emailValidation(email);
     console.log(emailValid)
 
-    if (emailValid
-        //adicionar condicao de email no BD//
-        ){
-        //
+    let emailApiValid = emailApiValidation(email);
+
+    if (emailValid && emailApiValid){
         console.log('O e-mail foi enviado')
         form.style.display='none'
         subContainer.innerHTML = '<p>Obrigado por entrar em contato!Retornaremos em breve...</p>'+ '<a id="back-to-start"href=""><button>Voltar para a tela inicial</button></a>'
@@ -86,8 +114,8 @@ email.addEventListener('blur', function (event){
 
 function formValidation(){
     let emailCorreto = emailValidation(email);
-    let campoVazio = emptyValidation(email)
-    //let emailInBd = 
+    let campoVazio = emptyValidation(email);
+    let emailApiCorreto = emailApiValidation(email);
     //Adicionar condição de e-mail no BD
     if(campoVazio){
         fieldInvalid(email);
@@ -97,9 +125,12 @@ function formValidation(){
         fieldInvalid(email);
         habilityErrorSpan(spanError);
         errorMessage(spanError,'Informe um e-mail válido');
+    }else if(emailApiCorreto == false){
+        fieldInvalid(email);
+        habilityErrorSpan(spanError);
+        errorMessage(spanError,'Não existe uma conta com este e-mail');
     }else if(emailCorreto == true){
         fieldValid(email);
         disabilityErrorSpan(spanError);
-    }
-     
+    } 
 }

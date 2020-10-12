@@ -26,6 +26,40 @@ function emailValidation(senhaElement){
 
 //Função que confere se o elemento email já existe no Banco de Dados
 
+// const url = 'https://xxxxxxxxxxxxxxx'
+// const endpointEmail = url.replace('','users')
+
+//Validação com a API
+async function getEmail(){
+    let emailsApi = [];
+
+    await fetch(endpointUsers, {
+        method: 'GET',
+        mode: 'cors',
+    }).then(res => { return res.json()})
+    .then(data => {
+        for (let i=0;i<data.data;i++){
+           emailsApi.push(data[i].email); 
+        }
+    });
+
+    if (email.value in emailsApi){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Função que valida o e-mail
+function emailApiValidation(emailElement){
+    if(emailElement == email){
+        if (getEmail() == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
 
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
 
@@ -64,11 +98,22 @@ loginButton.addEventListener('click', function (event){
     let senhaValid = senhaValidation(senha);
     console.log(senhaValid)
 
-    if (emailValid && senhaValid){
+    let emailApiValid = emailApiValidation(email);
+
+    if (emailValid && senhaValid && emailApiValid){
         email.style.border = '2px solid var(--green)'
         senha.style.border = '2px solid var(--green)'
         span.style.display='none';
+        
+        
+        
+        
         //Fazer o login do usuário
+
+
+
+
+
         console.log('Fiz o login')
     }else{
         formValidation();
@@ -84,11 +129,17 @@ for(let cont = 0; cont<inputsList.length;cont++){
 function formValidation(){
     let emailCorreto = emailValidation(email);
     let senhaCorreta = senhaValidation(senha);
+    let emailApiCorreto = emailApiValidation(email);
     if(emailCorreto == false || senhaCorreta == false){
         fieldInvalid(senha);
-        fieldInvalid(input);
+        fieldInvalid(email);
         habilityErrorSpan(spanError);
         errorMessage(spanError,'E-mail ou senha inválidos');
+    }else if (emailApiCorreto == false){
+        fieldInvalid(senha);
+        fieldInvalid(email);
+        habilityErrorSpan(spanError);
+        errorMessage(spanError,'Este e-mail não possui uma conta');
     }else{
         fieldValid(email);
         fieldValid(senha);

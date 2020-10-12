@@ -80,10 +80,10 @@ function emptyFields(array){
     return listaVazios;
 }
 
-//Validação com a API
 // const url = 'https://xxxxxxxxxxxxxxx'
 // const endpointEmail = url.replace('','users')
 
+//Validação com a API
 async function getEmail(){
     let emailsApi = [];
 
@@ -104,7 +104,16 @@ async function getEmail(){
     }
 }
 
-// function emailApiValidation(email, emailsList)
+function emailApiValidation(emailElement){
+    if(emailElement == email){
+        if (getEmail() == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
 
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
 
@@ -158,8 +167,8 @@ submitButton.addEventListener('click', function (event){
                 spanList[c].style.display='none';
             }
         }
+        
         //Dar um POST na API com os dados do formulário
-        // console.log('Cadastrei o usuário')
         let newUser = {
             'id':'',
             'name':'',
@@ -192,6 +201,7 @@ function formValidation(){
     for (let i=0;i<inputsList.length;i++){
         let campoVazio = emptyValidation(inputsList[i]);
         let emailCorreto = emailValidation(inputsList[i]);
+        let emailApiCorreto = emailApiValidation(inputsList[i]);
         let senhaCorreta = senhaValidation(inputsList[i]);
         let senhaConfirmCorreta = senhaConfirmationValidation(inputsList[i]);
         let campoChecado = checkValidation(inputsList[i]);
@@ -203,6 +213,10 @@ function formValidation(){
             fieldInvalid(inputsList[i]);
             habilityErrorSpan(spanList[i]);
             errorMessage(spanList[i],'Informe um e-mail válido');
+        }else if(emailApiCorreto == false){
+            fieldInvalid(inputsList[i]);
+            habilityErrorSpan(spanList[i]);
+            errorMessage(spanList[i],'Este e-mail já possui uma conta');
         }else if(senhaCorreta == false){
             fieldInvalid(inputsList[i]);
             habilityErrorSpan(spanList[i]);
