@@ -85,23 +85,23 @@ function emptyFields(array){
 // const endpointEmail = url.replace('','users')
 
 async function getEmail(){
-    let emails = [];
+    let emailsApi = [];
 
-    await fetch(endpointEmail, {
+    await fetch(endpointUsers, {
         method: 'GET',
         mode: 'cors',
     }).then(res => { return res.json()})
     .then(data => {
-        emails.push(data.data);
+        for (let i=0;i<data.data;i++){
+           emailsApi.push(data[i].email); 
+        }
     });
 
-    emails.forEach((emailApi) => {
-        if (emailApi == email){
-            return false;
-        }else{
-            return true; 
-        }
-    })
+    if (email.value in emailsApi){
+        return false;
+    }else{
+        return true;
+    }
 }
 
 // function emailApiValidation(email, emailsList)
@@ -151,18 +151,32 @@ submitButton.addEventListener('click', function (event){
     let checkValid = checkValidation(agreeTerms);
     console.log(checkValid)
 
-    if (emptyInputs.length==0 && checkValid 
-        && emailValid && senhaValid && senhaConfirmValid && getEmail() == true){
+    if (emptyInputs.length==0 && checkValid && emailValid && senhaValid && senhaConfirmValid && getEmail() == true){
         for (let i=0;i<inputsList.length;i++){
             for (let c=0;c<spanList.length;c++){
                 inputsList[i].style.border = '2px solid var(--green)'
                 spanList[c].style.display='none';
             }
         }
-        
         //Dar um POST na API com os dados do formulário
-        // await fetch
         // console.log('Cadastrei o usuário')
+        let newUser = {
+            'id':'',
+            'name':'',
+            'email':'',
+            'password':'',
+            'birthdate':'',
+            'type':'',
+            'phone':'',
+            'bio':''            
+        }
+        
+        await fetch(endpointUsers, {
+            method:'POST',
+            mode: 'cors',
+            body:JSON.stringify(newUser)
+        }).then(res => {return res.json()})
+        .then(data => {})
     }else{
         formValidation();
     }
