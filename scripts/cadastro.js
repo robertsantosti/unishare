@@ -80,6 +80,32 @@ function emptyFields(array){
     return listaVazios;
 }
 
+//Validação com a API
+// const url = 'https://xxxxxxxxxxxxxxx'
+// const endpointEmail = url.replace('','users')
+
+async function getEmail(){
+    let emails = [];
+
+    await fetch(endpointEmail, {
+        method: 'GET',
+        mode: 'cors',
+    }).then(res => { return res.json()})
+    .then(data => {
+        emails.push(data.data);
+    });
+
+    emails.forEach((emailApi) => {
+        if (emailApi == email){
+            return false;
+        }else{
+            return true; 
+        }
+    })
+}
+
+// function emailApiValidation(email, emailsList)
+
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
 
 //Função que habilita o span de erro
@@ -107,20 +133,6 @@ function errorMessage(spanListElement,message){
     return spanListElement.innerHTML = message;
 }
 
-//Validação com a API
-// const url = 'https://xxxxxxxxxxxxxxx'
-
-// async function getEmail (url){
-//     const response = await fetch(url);
-//     const result = await response.json();
-// }
-
-// fetch (url.email(email.value))
-//     .then ()
-//     .then ()
-
-// function emailApiValidation()
-
 //Evento de clique no botão de submit
 submitButton.addEventListener('click', function (event){
     event.preventDefault();
@@ -140,15 +152,14 @@ submitButton.addEventListener('click', function (event){
     console.log(checkValid)
 
     if (emptyInputs.length==0 && checkValid 
-        && emailValid && senhaValid && senhaConfirmValid 
-        //adicionar condicao de email não repetido no BD//
-        ){
+        && emailValid && senhaValid && senhaConfirmValid && getEmail() == true){
         for (let i=0;i<inputsList.length;i++){
             for (let c=0;c<spanList.length;c++){
                 inputsList[i].style.border = '2px solid var(--green)'
                 spanList[c].style.display='none';
             }
         }
+        
         //Dar um POST na API com os dados do formulário
         // await fetch
         // console.log('Cadastrei o usuário')
@@ -193,7 +204,7 @@ function formValidation(){
         }else if(campoVazio == false){
             fieldValid(inputsList[i]);
             disabilityErrorSpan(spanList[i]);
-        }else if(emailCorreto == false){
+        }else if(emailCorreto == true){
             fieldValid(inputsList[i]);
             disabilityErrorSpan(spanList[i]);
         }else if(senhaCorreta == false){
