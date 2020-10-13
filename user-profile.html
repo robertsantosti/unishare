@@ -9,7 +9,7 @@
 
     <title>UniShare | Meu Perfil</title>
   </head>
-  <body>
+  <body onLoad="load()">
     <div id="app" class="main profile">
       <header>
         <a href="" class="logo">
@@ -78,11 +78,11 @@
               </div>
 
               <div class="box-input">
-                <label for="phone-number">Telefone</label>
+                <label for="phone">Telefone</label>
                 <input
                   type="text"
-                  name="phone-number"
-                  id="phone-number"
+                  name="phone"
+                  id="phone"
                   placeholder="Digite seu telefone..."
                   required
                 />
@@ -109,50 +109,7 @@
         <section class="content-wrapper">
           <h2>Marcados com <span class="far fa-heart"></span></h2>
 
-          <div class="liked-wrapper">
-            <div class="liked">
-              <div class="liked-picture"></div>
-              <div class="description">
-                <p class="title">Apartamento - Boa Vista</p>
-                <p class="value">R$200.00</p>
-              </div>
-            </div>
-            <div class="liked">
-              <div class="liked-picture"></div>
-              <div class="description">
-                <p class="title">Apartamento - Boa Vista</p>
-                <p class="value">R$200.00</p>
-              </div>
-            </div>
-            <div class="liked">
-              <div class="liked-picture"></div>
-              <div class="description">
-                <p class="title">Apartamento - Boa Vista</p>
-                <p class="value">R$200.00</p>
-              </div>
-            </div>
-            <div class="liked">
-              <div class="liked-picture"></div>
-              <div class="description">
-                <p class="title">Apartamento - Boa Vista</p>
-                <p class="value">R$200.00</p>
-              </div>
-            </div>
-            <div class="liked">
-              <div class="liked-picture"></div>
-              <div class="description">
-                <p class="title">Apartamento - Boa Vista</p>
-                <p class="value">R$200.00</p>
-              </div>
-            </div>
-            <div class="liked">
-              <div class="liked-picture"></div>
-              <div class="description">
-                <p class="title">Apartamento - Boa Vista</p>
-                <p class="value">R$200.00</p>
-              </div>
-            </div>
-          </div>
+          <div class="liked-wrapper"></div>
         </section>
       </main>
       <footer>
@@ -288,6 +245,7 @@
             </div>
             
             <script src="./js/script.js"></script>
+            <script src="./js/profile.js"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
               integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"

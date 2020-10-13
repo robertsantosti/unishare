@@ -30,6 +30,8 @@ async function login() {
     return
   }
 
+  localStorage.setItem('user_id', user._id);
+
   window.location.href = `./principal.html`;
 
 }

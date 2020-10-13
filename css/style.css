@@ -252,6 +252,8 @@ body {
   border-radius: 50%;
   background-color: #555454;
   margin-bottom: 2rem;
+  background-size: cover;
+  background-position: center;
 }
 
 #app.main.profile .profile-wrapper #profile-form {
@@ -447,7 +449,7 @@ body {
   color: var(--grey);
 }
 
-.anuncio-data p{
+.anuncio-data p {
   text-align: justify;
 }
 
@@ -455,27 +457,28 @@ body {
   text-align: center;
 }
 
-.logo-description{
+.logo-description {
   display: inline-flex;
   text-align: justify;
   justify-content: space-evenly;
   vertical-align: middle;
 }
 
-.modal-content p{
+.modal-content p {
   text-align: justify;
   font-size: 0.8rem;
   margin-top: 3%;
 }
-.unishare-sobre p{
+.unishare-sobre p {
   font-size: 1rem;
 }
 
-.modal-content h3, .modal-content h4, .modal-content h5 {
+.modal-content h3,
+.modal-content h4,
+.modal-content h5 {
   font-weight: 550;
   color: var(--grey);
   font-size: 1.7rem;
-
 }
 .modal-content h6 {
   font-weight: normal;
@@ -484,14 +487,14 @@ body {
   align-items: baseline;
 }
 
-.modal-content h4{
+.modal-content h4 {
   margin: 2% auto 5%;
 }
 .modal-content h5 {
   margin: 2% auto 0;
 }
 
-.dev-team{
+.dev-team {
   align-items: center;
   justify-content: center;
   display: grid;
@@ -501,20 +504,22 @@ body {
   padding-left: 5%;
   padding-right: 5%;
 }
-.dev-team p{
+.dev-team p {
   text-align: center;
 }
-.row{
+.row {
   width: 100%;
   margin: 0;
   margin-top: 3%;
   align-items: center;
 }
-.dev-img{
+.dev-img {
   border-radius: 50%;
   width: 100%;
 }
-.dev-team a, .dev-team a:hover, .dev-team a:visited{
+.dev-team a,
+.dev-team a:hover,
+.dev-team a:visited {
   color: var(--grey);
   text-decoration: none;
 }
