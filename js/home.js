@@ -34,7 +34,7 @@ async function getRooms(search = null) {
     div.innerHTML = `
       <div class="room-picture" style="background-image: url(${pictures[0]})"></div>
       <div class="description">
-        <p class="title">${room.location}, ${room.city}</p>
+        <a class="title" href="./detalhe-anuncio.html">${room.location}, ${room.city}</a>
         <p class="value">R$${room.value.toFixed(2)}</p>
       </div>
     `;
