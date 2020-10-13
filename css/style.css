@@ -380,12 +380,24 @@ body {
   background-color: var(--grey);
 }
 
+#foto2 {
+  background-size: cover;
+  background-position: center;
+}
+
+#foto3 {
+  background-size: cover;
+  background-position: center;
+}
+
 #app.detail-anuncio .content-wrapper .photos .principal {
   width: 58%;
   margin-right: 1%;
   height: 24.5rem;
   border-radius: 1rem;
   background-color: var(--grey);
+  background-size: cover;
+  background-position: center;
 }
 
 #app.main.anunciar main {

@@ -38,40 +38,29 @@
       </header>
       <main>
         <section class="anuncio-wrapper">
-          <article class="anuncio-data">
-            <div class="text-anuncio">
-              <h1>Apartamento - 2 quartos - 80 m²</h1>
-              <h2><span class="far fa-heart"></span> Salvar</h2>
-            </div>
-            <h2>Cidade, Estado, País</h2>
+          <article class="anuncio-data" id="titulo-anuncio">
+            
           </article>
         </section>
 
         <section class="content-wrapper">
-          <div class="photos">
-            <div class="principal"></div>
+          <div class="photos">            
+            <img class="principal" href="#modalFotos" data-toggle="modal" data-target="#modalFotos" id="foto1" />
+              <!-- Foto principal -->
+
             <div class="secondary">
-              <div class="secondary-picture"></div>
-              <div class="secondary-picture"></div>
+              <img class="secondary-picture" href="#modalFotos" data-toggle="modal" data-target="#modalFotos" id="foto2" />
+                <!-- Foto secundária -->
+              <img class="secondary-picture" href="#modalFotos" data-toggle="modal" data-target="#modalFotos" id="foto3" />
+                <!-- Foto secundária -->
+              
             </div>
           </div>
         </section>
 
         <section class="anuncio-wrapper">
-          <article class="anuncio-data">
-            <h1>R$800,00</h1>
-            <h2>Detalhes:</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-              nisi minima eligendi, reprehenderit similique neque. Ullam cum
-              esse magnam veniam maxime ab. Qui voluptatum saepe dolor ipsa
-              corporis velit perferendis.
-            </p>
-            <h2>Contato:</h2>
-            <p>
-              <strong>Responsável: </strong>Usuário locatário</br>
-              <strong>e-mail:</strong> usuario@user.com.br
-            </p>
+          <article class="anuncio-data" id="dados-anuncio">
+            
           </article>
         </section>
       </main>
@@ -86,7 +75,7 @@
           <span class="fab fa-twitter"></span>
           <span class="fab fa-linkedin-in"></span>
         </div>
-        <nav aria-label="Menu do footer" class="footer-menu">
+        <nav class="footer-menu">
           <ul>
             <li><a href="#modalSobre" data-toggle="modal" data-target="#modalSobre">Sobre a uniShare</a></li>
             <li><a href="#modalTermos" data-toggle="modal" data-target="#modalTermos">Termos de uso</a></li>
@@ -205,6 +194,7 @@
       </div>
     </div>
 
+    <script src="./scripts/detalhe-anuncio.js"></script>
     <script src="./js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
