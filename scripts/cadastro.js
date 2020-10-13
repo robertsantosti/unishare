@@ -85,34 +85,41 @@ function emptyFields(array){
 
 //Validação com a API
 async function getEmail(){
-    let emailsApi = [];
+    let emailList = [];
 
-    await fetch(endpointUsers, {
-        method: 'GET',
-        mode: 'cors',
-    }).then(res => { return res.json()})
-    .then(data => {
-        for (let i=0;i<data.data;i++){
-           emailsApi.push(data[i].email); 
-        }
-    });
+    const response = await fetch('https://api-unishare.herokuapp.com/api/users');
+    const result = await response.json();
 
-    if (email.value in emailsApi){
-        return false;
-    }else{
-        return true;
+    for(let i=0;i<result.data.length;i++){
+        emailList.push(result.data[i].email)
     }
+
+    let exist = emailList
 }
 
-function emailApiValidation(emailElement){
-    if(emailElement == email){
-        if (getEmail() == true){
-            return true;
-        }else{
-            return false;
-        }
-    }
-}
+
+// async function getEmail(){
+
+
+   
+    
+       
+//     await fetch('https://api-unishare.herokuapp.com/api/users', {
+//         method: 'GET',
+//         mode: 'cors',
+//     }).then(res => { return res.json()})
+//     .then(response => {
+//         response = response.data.filter.email
+//     });
+
+//     console.log(response)
+
+//     if (email.value in response.data){
+//         return false;
+//     }else{
+//         return true;
+//     }
+// }
 
 
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
@@ -143,7 +150,8 @@ function errorMessage(spanListElement,message){
 }
 
 //Evento de clique no botão de submit
-submitButton.addEventListener('click', async function (event){
+submitButton.addEventListener('click', function (event){
+
     event.preventDefault();
     let emptyInputs = emptyFields(inputsList);
     console.log(emptyInputs);
@@ -160,7 +168,10 @@ submitButton.addEventListener('click', async function (event){
     let checkValid = checkValidation(agreeTerms);
     console.log(checkValid)
 
-    if (emptyInputs.length==0 && checkValid && emailValid && senhaValid && senhaConfirmValid && getEmail() == true){
+    let emailApiValid = getEmail()
+    console.log(emailApiValid)
+
+    if (emptyInputs.length==0 && checkValid && emailValid && senhaValid && senhaConfirmValid && getEmail() == false){
         for (let i=0;i<inputsList.length;i++){
             for (let c=0;c<spanList.length;c++){
                 inputsList[i].style.border = '2px solid var(--green)'
@@ -168,7 +179,7 @@ submitButton.addEventListener('click', async function (event){
             }
         }
         
-        //Dar um POST na API com os dados do formulário
+        //Dando um POST na API com os dados do formulário
         let newUser = {
             'id':'',
             'name':'',
@@ -180,14 +191,14 @@ submitButton.addEventListener('click', async function (event){
             'bio':''            
         }
         
-        await fetch(endpointUsers, {
+        fetch('https://api-unishare.herokuapp.com/api/users', {
             method:'POST',
             mode: 'cors',
             body:JSON.stringify(newUser)
         }).then(res => {return res.json()})
         .then(data => {})
 
-        window.location.href = './user-profile.html'
+        // Cadastrei o usuário
     }else{
         formValidation();
     }
@@ -203,7 +214,6 @@ function formValidation(){
     for (let i=0;i<inputsList.length;i++){
         let campoVazio = emptyValidation(inputsList[i]);
         let emailCorreto = emailValidation(inputsList[i]);
-        let emailApiCorreto = emailApiValidation(inputsList[i]);
         let senhaCorreta = senhaValidation(inputsList[i]);
         let senhaConfirmCorreta = senhaConfirmationValidation(inputsList[i]);
         let campoChecado = checkValidation(inputsList[i]);
@@ -212,13 +222,16 @@ function formValidation(){
             habilityErrorSpan(spanList[i]);
             errorMessage(spanList[i],'Este campo é obrigatório');
         }else if(emailCorreto == false){
-            fieldInvalid(inputsList[i]);
-            habilityErrorSpan(spanList[i]);
-            errorMessage(spanList[i],'Informe um e-mail válido');
-        }else if(emailApiCorreto == false){
-            fieldInvalid(inputsList[i]);
-            habilityErrorSpan(spanList[i]);
-            errorMessage(spanList[i],'Este e-mail já possui uma conta');
+            if(emailCorreto == false){
+                fieldInvalid(inputsList[i]);
+                habilityErrorSpan(spanList[i]);
+                errorMessage(spanList[i],'Informe um e-mail válido');
+            }
+            if(getEmail() == true){
+                fieldInvalid(inputsList[i]);
+                habilityErrorSpan(spanList[i]);
+                errorMessage(spanList[i],'Este e-mail já possui uma conta');
+            }
         }else if(senhaCorreta == false){
             fieldInvalid(inputsList[i]);
             habilityErrorSpan(spanList[i]);
