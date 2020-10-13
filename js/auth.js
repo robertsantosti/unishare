@@ -30,6 +30,6 @@ async function login() {
     return
   }
 
-  window.location.href = `/principal.html`;
+  window.location.href = `./principal.html`;
 
 }
