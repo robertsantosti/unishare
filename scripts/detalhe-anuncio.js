@@ -1,8 +1,7 @@
 const idRoom = "RECEBE DO DIRECIONAMENTO DA PÁGINA BUSCAR"
-const idUser = "RECEBE DO DIRECIONAMENTO DA PÁGINA BUSCAR"
+
 //integrar páginas pelo ID? Como direcionar? Abaixo exemplo com ID:
-const endpointRoom = `https://api-unishare.herokuapp.com/api/rooms?_id=5f84d4022864ef53f0e1197c`;
-const endpointUser = `https://api-unishare.herokuapp.com/api/users?_id=5f84db83c8dd941f903a00c2`;
+const endpointRoom = `https://api-unishare.herokuapp.com/api/rooms/${idRoom}`;
 
 async function getRooms() {
   let rooms = [];
@@ -23,6 +22,8 @@ async function getRooms() {
   .then(data => { rooms = data.data });
   let pictures = rooms[0].pictures.split(',');
 
+  const idUser = rooms[0].user_id;
+  const endpointUser = `https://api-unishare.herokuapp.com/api/users?_id=${idUser}`;
   await fetch(endpointUser
     ,{
     method: "GET",
@@ -39,9 +40,9 @@ async function getRooms() {
     </div>
     <h2>${rooms[0].location}, ${rooms[0].city}</h2>`
 
-  //FALTA ASSOCIAR DADOS DO PROPRIETÁRIO DO IMÓVEL AO IMÓVEL EM QUESTÃO
+  //FALTA ASSOCIAR DADOS DO PROPRIETÁRIO DO IMÓVEL EM ALGUNS CASOS (só tem 1 associado)
     dadosAnuncio.innerHTML = `
-    <h1>R$${rooms[0].value},00/mês</h1>
+    <h1>R$${rooms[0].value.toFixed(2)}/mês</h1>
     <h2>Detalhes:</h2>
     <p>
       ${rooms[0].description}
