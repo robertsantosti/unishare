@@ -171,7 +171,7 @@ submitButton.addEventListener('click', function (event){
     let emailApiValid = getEmail()
     console.log(emailApiValid)
 
-    if (emptyInputs.length==0 && checkValid && emailValid && senhaValid && senhaConfirmValid && getEmail() == false){
+    if (emptyInputs.length==0 && checkValid && emailValid && senhaValid && senhaConfirmValid){
         for (let i=0;i<inputsList.length;i++){
             for (let c=0;c<spanList.length;c++){
                 inputsList[i].style.border = '2px solid var(--green)'
@@ -180,24 +180,24 @@ submitButton.addEventListener('click', function (event){
         }
         
         //Dando um POST na API com os dados do formulário
-        let newUser = {
-            'id':'',
-            'name':'',
-            'email':'',
-            'password':'',
-            'birthdate':'',
-            'type':'',
-            'phone':'',
-            'bio':''            
-        }
+        // let newUser = {
+        //     'id':'',
+        //     'name':'',
+        //     'email':'',
+        //     'password':'',
+        //     'birthdate':'',
+        //     'type':'',
+        //     'phone':'',
+        //     'bio':''            
+        // }
         
-        fetch('https://api-unishare.herokuapp.com/api/users', {
-            method:'POST',
-            mode: 'cors',
-            body:JSON.stringify(newUser)
-        }).then(res => {return res.json()})
-        .then(data => {})
-
+        // fetch('https://api-unishare.herokuapp.com/api/users', {
+        //     method:'POST',
+        //     mode: 'cors',
+        //     body:JSON.stringify(newUser)
+        // }).then(res => {return res.json()})
+        // .then(data => {})
+        window.location.href='https://unishare.netlify.app/principal'
         // Cadastrei o usuário
     }else{
         formValidation();
