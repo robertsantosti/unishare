@@ -105,16 +105,16 @@ loginButton.addEventListener('click', function (event){
         senha.style.border = '2px solid var(--green)'
         span.style.display='none';
         
+        //Dar um POST na API com os dados do formulário
         
-        
-        
-        //Fazer o login do usuário
+        await fetch(endpointUsers, {
+            method:'POST',
+            mode: 'cors',
+            body:JSON.stringify()
+        }).then(res => {return res.json()})
+        .then(data => {})
 
-
-
-
-
-        console.log('Fiz o login')
+        window.location.href = './principal.html'
     }else{
         formValidation();
     }

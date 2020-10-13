@@ -186,6 +186,8 @@ submitButton.addEventListener('click', function (event){
             body:JSON.stringify(newUser)
         }).then(res => {return res.json()})
         .then(data => {})
+
+        window.location.href = './user-profile.html'
     }else{
         formValidation();
     }

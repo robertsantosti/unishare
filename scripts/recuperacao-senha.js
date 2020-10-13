@@ -101,6 +101,7 @@ recuperationButton.addEventListener('click', function (event){
         console.log('O e-mail foi enviado')
         form.style.display='none'
         subContainer.innerHTML = '<p>Obrigado por entrar em contato!Retornaremos em breve...</p>'+ '<a id="back-to-start"href=""><button>Voltar para a tela inicial</button></a>'
+        window.location.href = './index.html'
     }else{
         formValidation();
     }
