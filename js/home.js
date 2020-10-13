@@ -1,4 +1,6 @@
 const roomsEndpoint = `https://api-unishare.herokuapp.com/api/rooms`;
+const endpointRooms = `https://api-unishare.herokuapp.com/api/rooms/room_id`;
+
 const roomWrapper = document.querySelector('.room-wrapper');
 
 const searchBtn = document.querySelector('#search-btn');
@@ -28,6 +30,7 @@ async function getRooms(search = null) {
     let div = document.createElement('div')
     let pictures = room.pictures.split(',')
     div.classList.add('room')
+    div.setAttribute('onClick', `setRoomStorage(${room._id})`)
     div.innerHTML = `
       <div class="room-picture" style="background-image: url(${pictures[0]})"></div>
       <div class="description">
@@ -40,4 +43,14 @@ async function getRooms(search = null) {
   })
   
   return;
+}
+
+async function setRoomStorage(room_id) {
+  await fetch(endpointRooms.replace('room_id', room_id), {
+    method:"GET",
+    mode: "cors",
+  }).then(response => {return response.json()})
+  .then(response => {
+    localStorage.setItem('room_id', response.data._id);
+  });
 }
