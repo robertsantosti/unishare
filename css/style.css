@@ -203,6 +203,7 @@ body {
 /** Página Principal */
 #app.main.principal .content-wrapper {
   padding: 2rem 10%;
+  padding-bottom: 0;
 }
 
 #app.main.principal .banner {

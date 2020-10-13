@@ -45,48 +45,46 @@
 
           <form action="" method="POST" id="form-anunciar">
             <div>
-                          <div class="inputs">
-                            <div class="box-input">
-                              <label for="title" class="hide">Titulo do anúncio</label>
-                              <input type="text" id="title" name="title" placeholder="Título do anúncio" required />
-                              <span class='error' id='error-title'></span>
-                            </div>
-                            <div class="box-input">
-                              <label for="city" class="hide">CEP</label>
-                              <input type="text" id="cep" name="cep" placeholder="CEP" required />
-                              <span class='error' id='error-cep'></span>
-                            </div>
-                            <div class="box-input">
-                              <label for="city" class="hide">Cidade/Estado</label>
-                              <input type="text" id="city" name="city" placeholder="Cidade/Estado" required />
-                              <span class='error' id='error-city-estado'></span>
-                            </div>
-                            <div class="box-input">
-                              <label for="street" class="hide">Rua, bairro</label>
-                              <input type="text" name="street" id="street" placeholder="Rua, bairro" required />
-                              <span class='error' id='error-rua-bairro'></span>
-                            </div>
-                            <div class="box-input">
-                              <label for="price" class="hide">Preço</label>
-                              <input type="number" step="0.01" name="price" id="price" placeholder="Preço (R$)" />
-                              <span class='error' id='error-preço'></span>
-                            </div>
-                          </div>
-                          
-                          <div class="inputs">
-                            <div class="box-input">
-                              <label for="description" class="hide">Descrição</label>
-                              <textarea id="description" name="description" placeholder="Descrição"></textarea>
-                              <span class='error' id='error-descricao'></span>
-                            </div>
-                            <div class="box-input">
-                              <label for="files" class="label-files">
-                                <span class="fas fa-plus-circle"></span> Adicionar Fotos
-                              </label>
-                              <input type="file" name="images" id="files" placeholder="Adicionar Fotos" accept="image/png, image/jpeg, image/jpg"
-                                class="hide" multiple />
-                            </div>
-                          </div>
+              <div class="inputs">
+                <div class="box-input">
+                  <label for="title" class="hide">Titulo do anúncio</label>
+                  <input type="text" id="title" name="title" placeholder="Título do anúncio" required />
+                  <span class='error' id='error-title'></span>
+                </div>
+                <div class="box-input">
+                  <label for="city" class="hide">CEP</label>
+                  <input type="text" id="cep" name="cep" placeholder="CEP" required />
+                  <span class='error' id='error-cep'></span>
+                </div>
+                <div class="box-input">
+                  <label for="city" class="hide">Cidade/Estado</label>
+                  <input type="text" id="city" name="city" placeholder="Cidade/Estado" required />
+                  <span class='error' id='error-city-estado'></span>
+                </div>
+                <div class="box-input">
+                  <label for="street" class="hide">Rua, bairro</label>
+                  <input type="text" name="street" id="street" placeholder="Rua, bairro" required />
+                  <span class='error' id='error-rua-bairro'></span>
+                </div>
+                <div class="box-input">
+                  <label for="price" class="hide">Preço</label>
+                  <input type="number" step="0.01" name="price" id="price" placeholder="Preço (R$)" />
+                  <span class='error' id='error-preço'></span>
+                </div>
+              </div>
+              
+              <div class="inputs">
+                <div class="box-input">
+                  <label for="description" class="hide">Descrição</label>
+                  <textarea id="description" name="description" placeholder="Descrição" style="resize: none"></textarea>
+                  <span class='error' id='error-descricao'></span>
+                </div>
+                <div class="box-input">
+                  <label for="files" class="hide">Adicionar Fotos</label>
+                  <textarea name="images" id="files" placeholder="Adicionar Fotos (em formato de link, separadas por vírgulas)" style="resize: none"></textarea>
+                  <span class='error' id='error-descricao'></span>
+                </div>
+              </div>
             </div>
 
             <div class="submit">

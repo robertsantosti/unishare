@@ -1,6 +1,8 @@
 const idRoom = "RECEBE DO DIRECIONAMENTO DA PÁGINA BUSCAR"
-//integrar páginas pelo ID? Como direcionar?
+const idUser = "RECEBE DO DIRECIONAMENTO DA PÁGINA BUSCAR"
+//integrar páginas pelo ID? Como direcionar? Abaixo exemplo com ID:
 const endpointRoom = `https://api-unishare.herokuapp.com/api/rooms?_id=5f84d4022864ef53f0e1197c`;
+const endpointUser = `https://api-unishare.herokuapp.com/api/users?_id=5f84db83c8dd941f903a00c2`;
 
 async function getRooms() {
   let rooms = [];
@@ -21,6 +23,15 @@ async function getRooms() {
   .then(data => { rooms = data.data });
   let pictures = rooms[0].pictures.split(',');
 
+  await fetch(endpointUser
+    ,{
+    method: "GET",
+    mode: "cors"
+  }
+  )
+  .then(res => {return res.json()})
+  .then(data => { users = data.data });
+
     tituloAnuncio.innerHTML = `
     <div class="text-anuncio">
       <h1>${rooms[0].title}</h1>
@@ -28,7 +39,7 @@ async function getRooms() {
     </div>
     <h2>${rooms[0].location}, ${rooms[0].city}</h2>`
 
-  //FALTA INSERIR CONTATOS (nome e email) DO PROPRIETÁRIO DO IMÓVEL
+  //FALTA ASSOCIAR DADOS DO PROPRIETÁRIO DO IMÓVEL AO IMÓVEL EM QUESTÃO
     dadosAnuncio.innerHTML = `
     <h1>R$${rooms[0].value},00/mês</h1>
     <h2>Detalhes:</h2>
@@ -37,15 +48,15 @@ async function getRooms() {
     </p>
     <h2>Contato:</h2>
     <p>
-      <strong>Responsável: </strong>INSERIR Usuário locatário</br>
-      <strong>e-mail:</strong> INSERIR usuario@user.com.br
+      <strong>Responsável: </strong>${users[0].name}</br>
+      <strong>e-mail: </strong>${users[0].email}
     </p>`
 
     fotoPrincipal.style.backgroundImage = `url(${pictures[0]})`;
     foto2.style.backgroundImage = `url(${pictures[1]})`;
-    // foto3.style.backgroundImage = `url(${pictures[2]})`;
+    foto3.style.backgroundImage = `url(${pictures[2]})`;
 
-  // adicionar/remover quarto aos favoritos (salvar/salvo)
+  // adicionar/remover classe favoritos (salvar/salvo)
   let salvar = document.getElementById('salvar');
   salvar.addEventListener("click", () => {
     let liked = document.getElementById('heart');
@@ -58,6 +69,8 @@ async function getRooms() {
       return;
     }
     liked = document.getElementById('heart');
+
+    // Falta DIRECIONAR/INSERIR quarto aos favoritos do usuário
   }); 
 }
 getRooms();

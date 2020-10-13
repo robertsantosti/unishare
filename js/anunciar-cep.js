@@ -8,6 +8,7 @@ const cityEstado = document.querySelector('#city')
 const ruaBairro = document.querySelector('#street')
 const preco = selectId('price')
 const descricao = selectId('description')
+const files = selectId('files')
 const submitButton = selectId('submit')
 
 async function getCpf(pesquisa){
@@ -54,7 +55,7 @@ function selectId(elementId) {
 }
 
 //Pegando lista de inputs
-const inputsList = [title, cep, cityEstado, ruaBairro, preco, descricao];
+const inputsList = [title, cep, cityEstado, ruaBairro, preco, descricao, files];
 console.log(inputsList)
 
 //Pegando lista de spans para imprimir o erro

@@ -157,15 +157,22 @@
 }
 
 .search-wrapper input {
+  margin-top: 5%;
   padding-left: 1rem;
   border: 0;
   background-color: var(--soft_blue);
   border-radius: 0.5rem 0 0 0.5rem;
   height: 2.5rem;
   width: 20rem;
+  outline-style: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  border-color: transparent;
 }
 
 .search-wrapper button {
+  margin-top: 5%;
   border: 0;
   width: 3rem;
   border-radius: 0 0.5rem 0.5rem 0;
@@ -174,6 +181,12 @@
   justify-content: center;
   border-left: 1px solid var(--grey);
   background-color: var(--soft_blue);
+  outline-style: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  border-color: transparent;
+  cursor: pointer;
 }
 
 .theme-blue {
