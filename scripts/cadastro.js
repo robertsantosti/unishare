@@ -143,7 +143,7 @@ function errorMessage(spanListElement,message){
 }
 
 //Evento de clique no botão de submit
-submitButton.addEventListener('click', function (event){
+submitButton.addEventListener('click', async function (event){
     event.preventDefault();
     let emptyInputs = emptyFields(inputsList);
     console.log(emptyInputs);
