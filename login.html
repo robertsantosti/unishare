@@ -13,10 +13,10 @@
 <body>
     <div class='container'>
         <div class = 'sub-container'>
-            <form class='form-login' action="" method='POST'>
+            <form class='form-login' action="">
                 <h1>Entrar</h1>
-                <input type="email" name='user-email' id='user-email' Placeholder="E-mail" required>
-                <input type="password" name='senha' id='senha' Placeholder='Senha' required>
+                <input type="email" name='email' id='email' Placeholder="E-mail" required>
+                <input type="password" name='password' id='password' Placeholder='Senha' required>
                 <span class='error' id='error-data'></span>
                 <a href='recuperacao-senha.html' id='esqueceu-senha'>Esqueceu sua senha?</a>
                 <button id='btn-login' class='btn-login'>LOGIN</button>
@@ -29,5 +29,7 @@
       <h2>Fala, universitário!</h2>
       <img src="img/Login-pana.png" alt="Imagem de login" />
     </div>
-    <script src='./scripts/login.js'></script>
+    <!-- <script src='./scripts/login.js'></script> -->
+
+    <script src="./js/auth.js"></script>
 </html>
