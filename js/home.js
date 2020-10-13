@@ -1,10 +1,21 @@
 const roomsEndpoint = `https://api-unishare.herokuapp.com/api/rooms`;
 const roomWrapper = document.querySelector('.room-wrapper');
 
-async function getRooms() {
-  let rooms = [];
+const searchBtn = document.querySelector('#search-btn');
 
-  await fetch(roomsEndpoint, {
+searchBtn.addEventListener('click', async function (event) {
+  event.preventDefault();
+  const input = document.querySelector("#search");
+  roomWrapper.innerHTML = ``;
+  await getRooms(input.value);
+});
+
+async function getRooms(search = null) {
+  let rooms = [];
+  
+  let endpoint = (search) ? `${roomsEndpoint}?city=${search}` : roomsEndpoint;
+
+  await fetch(endpoint, {
     method:"GET",
     mode: "cors",
   })
