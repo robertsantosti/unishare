@@ -56,6 +56,16 @@
   }
 }
 
+@media (max-width: 700px) {
+  #app.main.principal main {
+    padding: 0;
+    margin-top: 1rem;
+  }
+  #app.main.principal main section {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 500px) {
   #app footer .social-media {
     font-size: 1rem;
@@ -111,11 +121,24 @@
     align-items: center;
     width: 100%;
     position: fixed;
+    z-index: 9999;
   }
 
   #app main {
     margin-top: 5rem;
     padding: 0 10%;
+  }
+
+  #app.main.contact .contact-wrapper {
+    flex-direction: column;
+  }
+
+  #app.main.contact .contact-wrapper article {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   #app.home main section {
@@ -147,7 +170,13 @@
     margin-top: 2rem;
   }
 
-  #app.main.anunciar form {
+  #app.main.contact p {
+    text-align: justify;
+    font-size: 0.8rem;
+  }
+
+  #app.main.anunciar form,
+  #app.main.contact form {
     flex-direction: column;
     margin: 1rem 0;
   }
@@ -155,10 +184,6 @@
   #app.main.anunciar #form-anunciar div {
     flex-direction: column;
     padding: 0;
-  }
-
-  #app.main.anunciar form .box-input {
-    margin-bottom: 1rem;
   }
 
   .label-files {
@@ -181,7 +206,59 @@
   #app.main.anunciar form .submit .buttons button:last-child {
     margin: 0;
   }
-  
+
+  #app.main.principal .content-wrapper {
+    margin: 0;
+  }
+
+  #app.main.principal .content-wrapper .room-wrapper,
+  #app.main.profile .content-wrapper .liked-wrapper,
+  #app.main.profile .content-wrapper .room-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  #app.main.profile main {
+    padding: 0;
+  }
+
+  #app.main.profile .profile-wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #app.main.profile .profile-wrapper h1:first-child {
+    margin-bottom: 1rem;
+  }
+
+  #app.main.profile .profile-wrapper article {
+    height: 100%;
+    padding: 1rem 0;
+  }
+
+  #app.main.profile .profile-wrapper article form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #app.main.profile .profile-wrapper article form .box-input {
+    width: 100%;
+  }
+
+  #app.main.profile .content-wrapper {
+    width: 100%;
+  }
+
+  #app.main.profile .content-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .search-wrapper input {
+    width: 15rem;
+  }
+
   #app.detail-anuncio main section {
     flex-direction: column;
   }

@@ -4,6 +4,7 @@
   --green: #3fc44e;
   --grey: #555454;
   --blue: #38b6ff;
+  --soft_blue: #d5f0ff;
 }
 
 * {
@@ -199,26 +200,49 @@ body {
   color: var(--grey);
 }
 
-#app.main.profile main {
-  display: flex;
-  flex-direction: column;
+/** Página Principal */
+#app.main.principal .content-wrapper {
+  padding: 2rem 10%;
 }
 
-#app.main.profile .profile-wrapper,
-#app.detail-anuncio .anuncio-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10%;
+#app.main.principal .banner {
+  background-image: url("../img/wallpapper.jpg");
+  width: 100%;
+  height: 20rem;
+  background-size: cover;
+  background-position: center;
 }
 
-#app.main.profile .profile-wrapper article {
+#app.main.principal .container-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+}
+
+/** Perfil do usuário */
+#app.main.profile main {
+  display: flex;
+  flex-direction: column;
+}
+
+#app.main.profile .profile-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#app.main.profile .profile-wrapper h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+#app.main.profile .profile-wrapper article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 #app.main.profile .profile-wrapper .profile-picture {
@@ -229,30 +253,14 @@ body {
   margin-bottom: 2rem;
 }
 
-#app.main.profile .profile-wrapper .profile-form {
+#app.main.profile .profile-wrapper #profile-form {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3rem;
 }
 
-#app.main.profile .profile-wrapper .profile-form h1 {
-  color: var(--grey);
-  font-size: 3rem;
-}
-
-#app.main.profile .profile-wrapper .profile-form .submit {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-#app.main.principal .content-wrapper{
-  padding: 2rem 10%;
-}
 #app.main.profile .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -262,48 +270,32 @@ body {
   padding: 0 10%;
 }
 
+#app.main.profile.tenant .content-wrapper {
+  background-color: var(--green);
+}
+
 #app.main.profile .content-wrapper h2 {
   font-weight: 300;
   text-align: center;
   font-size: 3rem;
   padding: 2rem 0;
 }
-#app.main.principal .content-wrapper .liked-wrapper,
-#app.main.profile .content-wrapper .liked-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding-bottom: 3rem;
-}
-
-#app.main.principal .content-wrapper .liked-wrapper .liked .liked-picture,
-#app.main.profile .content-wrapper .liked-wrapper .liked .liked-picture {
-  width: 100%;
-  height: 12rem;
-  border-radius: 1rem;
-  background-color: var(--grey);
-}
-
-#app.main.principal .content-wrapper .liked-wrapper .liked .description,
-#app.main.profile .content-wrapper .liked-wrapper .liked .description {
-  padding: 1rem 0;
-  font-weight: 300;
-}
-
-#app.main.principal .content-wrapper .liked-wrapper .liked .description .value,
-#app.main.profile .content-wrapper .liked-wrapper .liked .description .value {
-  font-weight: 700;
-}
 
 /** Contato **/
+#app.main.contact main {
+  padding: 0 10%;
+}
 
-/*
 #app.main.contact .contact-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
   height: 100%;
+  margin-top: 1rem;
+}
+
+#app.main.contact .contact-wrapper form {
+  width: 100%;
 }
 
 #app.main.contact .contact-wrapper article {
@@ -312,43 +304,23 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
 }
 
-#app.main.contact .contact-wrapper .article2 {
+#app.main.contact .contact-wrapper article p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#app.main.contact .contact-wrapper article div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 40%;
-  height: 40%;
-}
-
-#app.main.contact .contact-wrapper .contact-form h1 {
+  font-size: 2rem;
   color: var(--grey);
-  font-size: 3rem;
-  margin-top: 1%;
 }
 
-#app.main.contact .contact-wrapper .contact-form {
+#app.main.contact form .submit button {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
 }
-
-#app.main.contact .contact-wrapper .contact-form button {
-  display: inline-block;
-  justify-content: flex-end;
-  width: 100%;
-  margin-top: 1rem;
-  background-color: #38b6ff;
-  border: none;
-}
-
-*/
 
 #app.detail-anuncio .anuncio-wrapper .anuncio-data {
   width: 100%;
@@ -532,4 +504,69 @@ body {
 .dev-team a, .dev-team a:hover, .dev-team a:visited{
   color: var(--grey);
   text-decoration: none;
+}
+/** Classes Reaproveitaveis */
+#app.main.profile .profile-wrapper,
+#app.detail-anuncio .anuncio-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#app.main.principal .content-wrapper .room-wrapper,
+#app.main.profile .content-wrapper .room-wrapper,
+#app.main.profile .content-wrapper .liked-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding-bottom: 3rem;
+}
+
+#app.main.principal .content-wrapper .room-wrapper .room .room-picture,
+#app.main.profile .content-wrapper .room-wrapper .room .room-picture,
+#app.main.profile .content-wrapper .liked-wrapper .liked .liked-picture {
+  width: 100%;
+  height: 12rem;
+  border-radius: 1rem;
+  background-color: var(--grey);
+}
+
+#app.main.principal .content-wrapper .room-wrapper .room .description,
+#app.main.profile .content-wrapper .room-wrapper .room .description,
+#app.main.profile .content-wrapper .liked-wrapper .liked .description {
+  padding: 1rem 0;
+  font-weight: 300;
+}
+
+#app.main.principal .content-wrapper .room-wrapper .room .description .value,
+#app.main.profile .content-wrapper .room-wrapper .room .description .value,
+#app.main.profile .content-wrapper .liked-wrapper .liked .description .value {
+  font-weight: 700;
+  color: var(--grey);
+}
+
+#app.main.profile .content-wrapper .room-wrapper .room {
+  padding: 1rem 0;
+}
+
+#app.main.profile .content-wrapper .room-wrapper .room .actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#app.main.profile .content-wrapper .room-wrapper .room .actions button {
+  width: 100%;
+  margin-right: 1rem;
+}
+
+#app.main.profile
+  .content-wrapper
+  .room-wrapper
+  .room
+  .actions
+  button:last-child {
+  margin: 0;
 }

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+
+    <title>UniShare | Meu Perfil</title>
+  </head>
+  <body>
+    <div id="app" class="main profile tenant">
+      <header>
+        <a href="" class="logo">
+          <img src="img/logo-branca.svg" alt="UniShare" />
+        </a>
+
+        <nav aria-label="Menu Desktop" class="hide-mobile">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./contact.html">Contato</a></li>
+            <li><a href="user-profile.html" class="active">Meu Perfil</a></li>
+          </ul>
+        </nav>
+
+        <button
+          id="menu-mobile"
+          class="btn btn-menu-mobile hide-tablet hide-desktop"
+        >
+          <span class="fas fa-bars" id="icon-btn-menu"></span>
+        </button>
+
+        <div aria-label="Menu Mobile" class="menu-mobile hide">
+          <a href="./index.html">Home</a>
+          <a href="./contact.html">Contato</a>
+          <a href="./user-profile.html">Meu Perfil</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="profile-wrapper">
+          <h1 class="hide-desktop">Meu Perfil</h1>
+
+          <article>
+            <div class="profile-picture"></div>
+            <form action="">
+              <label for="picture" class="btn btn-outline-grey"
+                ><span class="fas fa-pen"></span> Editar Foto</label
+              >
+              <input type="file" class="hidden" id="picture" />
+            </form>
+          </article>
+          <article>
+            <form action="" id="profile-form">
+              <h1 class="hide-mobile">Meu Perfil</h1>
+
+              <div class="box-input">
+                <label for="name">Nome</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Digite seu nome..."
+                  required
+                />
+              </div>
+
+              <div class="box-input">
+                <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Digite seu email..."
+                  required
+                />
+              </div>
+
+              <div class="box-input">
+                <label for="phone-number">Telefone</label>
+                <input
+                  type="text"
+                  name="phone-number"
+                  id="phone-number"
+                  placeholder="Digite seu telefone..."
+                  required
+                />
+              </div>
+
+              <div class="box-input">
+                <label for="bio">Bio</label>
+                <textarea
+                  name="bio"
+                  id="bio"
+                  placeholder="Digite sua bio aqui..."
+                ></textarea>
+              </div>
+
+              <div class="submit">
+                <button type="submit" class="btn btn-outline-grey">
+                  Salvar Alterações
+                </button>
+              </div>
+            </form>
+          </article>
+        </section>
+
+        <section class="content-wrapper">
+          <h2>Meus Anúncios</h2>
+
+          <div class="room-wrapper">
+            <div class="room">
+              <div class="room-picture"></div>
+              <div class="description">
+                <p class="title">Apartamento - Boa Vista</p>
+                <p class="value">R$200.00</p>
+              </div>
+              <div class="actions">
+                <button class="btn btn-outline-red">
+                  Excluir
+                </button>
+                <button class="btn btn-outline-light">
+                  Editar
+                </button>
+              </div>
+            </div>
+            <div class="room">
+              <div class="room-picture"></div>
+              <div class="description">
+                <p class="title">Apartamento - Boa Vista</p>
+                <p class="value">R$200.00</p>
+              </div>
+              <div class="actions">
+                <button class="btn btn-outline-red">
+                  Excluir
+                </button>
+                <button class="btn btn-outline-light">
+                  Editar
+                </button>
+              </div>
+            </div>
+            <div class="room">
+              <div class="room-picture"></div>
+              <div class="description">
+                <p class="title">Apartamento - Boa Vista</p>
+                <p class="value">R$200.00</p>
+              </div>
+              <div class="actions">
+                <button class="btn btn-outline-red">
+                  Excluir
+                </button>
+                <button class="btn btn-outline-light">
+                  Editar
+                </button>
+              </div>
+            </div>
+            <div class="room">
+              <div class="room-picture"></div>
+              <div class="description">
+                <p class="title">Apartamento - Boa Vista</p>
+                <p class="value">R$200.00</p>
+              </div>
+              <div class="actions">
+                <button class="btn btn-outline-red">
+                  Excluir
+                </button>
+                <button class="btn btn-outline-light">
+                  Editar
+                </button>
+              </div>
+            </div>
+            <div class="room">
+              <div class="room-picture"></div>
+              <div class="description">
+                <p class="title">Apartamento - Boa Vista</p>
+                <p class="value">R$200.00</p>
+              </div>
+              <div class="actions">
+                <button class="btn btn-outline-red">
+                  Excluir
+                </button>
+                <button class="btn btn-outline-light">
+                  Editar
+                </button>
+              </div>
+            </div>
+            <div class="room">
+              <div class="room-picture"></div>
+              <div class="description">
+                <p class="title">Apartamento - Boa Vista</p>
+                <p class="value">R$200.00</p>
+              </div>
+              <div class="actions">
+                <button class="btn btn-outline-red">
+                  Excluir
+                </button>
+                <button class="btn btn-outline-light">
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="theme-blue">
+        <div class="logo hide-mobile hide-tablet">
+          <img src="./img/logo-branca.svg" alt="UniShare" />
+        </div>
+        <div class="social-media">
+          <span class="fab fa-whatsapp"></span>
+          <span class="fab fa-instagram"></span>
+          <span class="fab fa-twitter"></span>
+          <span class="fab fa-linkedin-in"></span>
+        </div>
+        <nav aria-label="Menu do footer" class="footer-menu">
+          <ul>
+            <li><a href="">Sobre a uniShare</a></li>
+            <li><a href="">Termos de uso</a></li>
+            <li>
+              <span>uniShare<sup>&copy;</sup> 2020</span>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f82486fc2e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -80,7 +80,39 @@ function emptyFields(array){
     return listaVazios;
 }
 
-//Função que confere se o elemento email já existe no Banco de Dados
+// const url = 'https://xxxxxxxxxxxxxxx'
+// const endpointEmail = url.replace('','users')
+
+//Validação com a API
+async function getEmail(){
+    let emailsApi = [];
+
+    await fetch(endpointUsers, {
+        method: 'GET',
+        mode: 'cors',
+    }).then(res => { return res.json()})
+    .then(data => {
+        for (let i=0;i<data.data;i++){
+           emailsApi.push(data[i].email); 
+        }
+    });
+
+    if (email.value in emailsApi){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function emailApiValidation(emailElement){
+    if(emailElement == email){
+        if (getEmail() == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
 
 
 // FUNÇÕES PARA PRINT DE ERRO NA TELA (REJEIÇÃO OU VALIDAÇÃO)
@@ -128,18 +160,34 @@ submitButton.addEventListener('click', function (event){
     let checkValid = checkValidation(agreeTerms);
     console.log(checkValid)
 
-    if (emptyInputs.length==0 && checkValid 
-        && emailValid && senhaValid && senhaConfirmValid 
-        //adicionar condicao de email não repetido no BD//
-        ){
+    if (emptyInputs.length==0 && checkValid && emailValid && senhaValid && senhaConfirmValid && getEmail() == true){
         for (let i=0;i<inputsList.length;i++){
             for (let c=0;c<spanList.length;c++){
                 inputsList[i].style.border = '2px solid var(--green)'
                 spanList[c].style.display='none';
             }
         }
-        //Fazer o cadastro do usuário
-        console.log('Cadastrei o usuário')
+        
+        //Dar um POST na API com os dados do formulário
+        let newUser = {
+            'id':'',
+            'name':'',
+            'email':'',
+            'password':'',
+            'birthdate':'',
+            'type':'',
+            'phone':'',
+            'bio':''            
+        }
+        
+        await fetch(endpointUsers, {
+            method:'POST',
+            mode: 'cors',
+            body:JSON.stringify(newUser)
+        }).then(res => {return res.json()})
+        .then(data => {})
+
+        window.location.href = './user-profile.html'
     }else{
         formValidation();
     }
@@ -155,6 +203,7 @@ function formValidation(){
     for (let i=0;i<inputsList.length;i++){
         let campoVazio = emptyValidation(inputsList[i]);
         let emailCorreto = emailValidation(inputsList[i]);
+        let emailApiCorreto = emailApiValidation(inputsList[i]);
         let senhaCorreta = senhaValidation(inputsList[i]);
         let senhaConfirmCorreta = senhaConfirmationValidation(inputsList[i]);
         let campoChecado = checkValidation(inputsList[i]);
@@ -166,6 +215,10 @@ function formValidation(){
             fieldInvalid(inputsList[i]);
             habilityErrorSpan(spanList[i]);
             errorMessage(spanList[i],'Informe um e-mail válido');
+        }else if(emailApiCorreto == false){
+            fieldInvalid(inputsList[i]);
+            habilityErrorSpan(spanList[i]);
+            errorMessage(spanList[i],'Este e-mail já possui uma conta');
         }else if(senhaCorreta == false){
             fieldInvalid(inputsList[i]);
             habilityErrorSpan(spanList[i]);
@@ -181,7 +234,7 @@ function formValidation(){
         }else if(campoVazio == false){
             fieldValid(inputsList[i]);
             disabilityErrorSpan(spanList[i]);
-        }else if(emailCorreto == false){
+        }else if(emailCorreto == true){
             fieldValid(inputsList[i]);
             disabilityErrorSpan(spanList[i]);
         }else if(senhaCorreta == false){

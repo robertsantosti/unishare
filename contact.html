@@ -19,7 +19,7 @@
 
         <nav aria-label="Menu Desktop" class="hide-mobile">
           <ul>
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="./principal.html">Home</a></li>
             <li><a href="./contact.html" class="active">Contato</a></li>
             <li><a href="user-profile.html">Meu Perfil</a></li>
           </ul>
@@ -33,7 +33,7 @@
         </button>
 
         <div aria-label="Menu Mobile" class="menu-mobile hide">
-          <a href="./index.html">Home</a>
+          <a href="./principal.html">Home</a>
           <a href="./contact.html">Contato</a>
           <a href="user-profile.html">Meu Perfil</a>
         </div>
@@ -54,6 +54,7 @@
                   placeholder="Seu nome"
                   required
                 />
+                <span class='error' id='error-data'></span>
               </div>
               <div class="box-input">
                 <label for="email" class="hide">E-mail</label>
@@ -64,65 +65,33 @@
                   placeholder="Seu e-mail"
                   required
                 />
+                <span class='error' id='error-data'></span>
               </div>
-            </form>
-          </div>
-        </section>
-        <!--
-                   <section class="contact-wrapper">
-          <article>
-            <form action="" class="contact-form">
-              <h1>Contato</h1>
-              <br />
-              <p>Deixe uma mensagem e entraremos em contato</p>
-              <br />
               <div class="box-input">
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Seu nome"
-                  required
-                />
-              </div>
-              <br />
-
-              <div class="box-input">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Seu e-mail"
-                  required
-                />
-              </div>
-              <br />
-
-              <div class="box-input">
+                <label for="message" class="hide">Mensagem</label>
                 <textarea
-                  name="mensage"
-                  id="mensage"
+                  name="message"
+                  id="message"
                   placeholder="Mensagem"
                 ></textarea>
+                <span class='error' id='error-data'></span>
               </div>
-              <br />
 
               <div class="submit">
-                <button type="submit" class="btn btn-blue">ENVIAR</button>
+                <button id = 'btn-submit' type="submit" class="btn btn-blue">ENVIAR</button>
               </div>
             </form>
-          </article>
-          <article class="article2">
-            <p>Quer conversar por mensagem?</p>
-            <br />
 
-            <br />
-            <div>
-              <img src="/img/icons8-whatsapp-2401.svg" alt="Whatsapp" />
-            </div>
-          </article>
+            <article>
+              <p>Quer conversar por mensagem?</p>
+              <div>
+                <span class="fas fa-chevron-down"></span>
+                <span class="fas fa-chevron-down"></span>
+              </div>
+              <a href='https://web.whatsapp.com/send?phone=5554992046595' target="_blank"><span class="fab fa-whatsapp fa-5x text-green"></span></a>
+            </article>
+          </div>
         </section>
-        -->
       </main>
       <footer>
         <div class="logo hide-mobile hide-tablet">
@@ -134,7 +103,7 @@
           <span class="fab fa-twitter"></span>
           <span class="fab fa-linkedin-in"></span>
         </div>
-        <nav class="footer-menu">
+        <nav aria-label="Menu do footer" class="footer-menu">
           <ul>
             <li><a href="#modalSobre" data-toggle="modal" data-target="#modalSobre">Sobre a uniShare</a></li>
             <li><a href="#modalTermos" data-toggle="modal" data-target="#modalTermos">Termos de uso</a></li>
@@ -261,5 +230,7 @@
       src="https://kit.fontawesome.com/f82486fc2e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/script.js"></script>
+    <script src="./scripts/contact.js"></script>
   </body>
 </html>

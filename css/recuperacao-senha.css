@@ -6,6 +6,7 @@
     --grey: #555454;
     --ligth-grey:#6a6969;
     --blue: #38B6FF;
+    --ligth-blue: #38b6ffcc;
 }
  
 * {
@@ -23,13 +24,13 @@ html, body {
 }
 
 body {
-    background-color: #3FC44Ecc;
+    background-color: var(--ligth-blue);
     display: flex;
 }
 
 .container {
     width: 50%;
-    height: 100%;
+    height: auto;
     background-color: white;
     display: block;
     align-items: center;
@@ -39,8 +40,8 @@ body {
 
 .container h1 {
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 35px;
+    margin-bottom: 40px;
+    font-size: 45px;
     color: var(--ligth-grey);
 }
 
@@ -51,25 +52,19 @@ body {
 
 .container form input {
     display: block;
+    margin: 0 auto;
     width: 100%;
-    height: 35px;
+    height: 50px;
+    margin-bottom: 30px;
     padding-left: 10px;
     font-size:20px;
     border: 2px solid var(--ligth-grey);
+
 }
 
-.fields {
-    width: 100%;
-    height: auto;
-    min-height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom:0px;
+#senha {
+    margin-bottom:30px;
 }
-
-
 
 .container form p {
     text-align: center;
@@ -79,16 +74,20 @@ body {
 
 .container p{
     color: var(--ligth-grey);
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 a {
     font-weight: bold;
 }
 
+#back-to-start{
+    margin: 0 auto;
+}
+
 .sub-container {
     /*margin: 200px auto 130px auto;*/
-    margin: 30px auto 0 auto;
+    margin: 70px auto 0 auto;
     width: 75%;
     height: auto;
 }
@@ -116,21 +115,39 @@ form label {
     margin-bottom: 20px;
 }
 
-.container form #btn-submit {
+.container form button {
     display: block;
     margin-left:auto;
     margin-right: auto;
-    margin-bottom: 30px;
-    /* margin-top: 30px; */
+    margin-bottom: 70px;
+    margin-top: 30px;
     width: 100%;
-    height: 50px;
-    background-color: var(--blue);
+    height: 60px;
+    background-color: var(--green);
     box-shadow: none;
     border: none;
     color: white;
     font-size: 20px;
     border-radius:15px;
 }
+
+.sub-container button {
+    text-decoration: none;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    margin-top: 30px;
+    width: 100%;
+    height: 60px;
+    background-color: var(--green);
+    box-shadow: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius:15px;
+}
+
 
 
 .container img{
@@ -148,7 +165,7 @@ form label {
 
 .decoration h2 {
     text-align: right;
-    margin-top: 100px;
+    margin-top: 70px;
     margin-right: 5%;
     font-size: 40px;
     font-weight: bold;
@@ -156,7 +173,7 @@ form label {
 }
 
 .decoration img {
-    width: 60%;
+    width:65%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -178,8 +195,19 @@ a:hover {
     color:var(--blue);
 }
 
-.container form #btn-submit:hover {
-    background-color: var(--ligth-green);
+
+.container form button:hover {
+    background-color: var(--ligth-blue);
+}
+
+.sub-container button:hover {
+    background-color: var(--ligth-blue);
+    text-decoration: none;
+}
+
+.sub-container a:hover {
+    background-color: var(--ligth-blue);
+    text-decoration: none;
 }
 
 .error {
@@ -191,8 +219,5 @@ a:hover {
     padding-left:20px;
 }
 
-/* div.error.active {
-    border: 1px solid red;
-    padding: 0.4em;
-}
- */
+
+
