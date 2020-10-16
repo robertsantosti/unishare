@@ -1,0 +1,349 @@
+@media screen and (max-width: 1000px) {
+  .hide-tablet {
+    display: none;
+  }
+
+  #app.main header a {
+    font-size: 1rem;
+  }
+
+  #app.main header img {
+    height: 1rem;
+  }
+
+  #app.home main section article.content {
+    padding: 0 5%;
+  }
+
+  #app.home main section article.content h1 {
+    font-size: 3rem;
+  }
+
+  #app.home main section article.content p {
+    font-size: 1rem;
+  }
+
+  #app.home main section article.content .buttons {
+    width: 100%;
+  }
+
+  .btn {
+    font-size: 0.75rem;
+  }
+
+  #app footer .social-media {
+    font-size: 1rem;
+    width: 20%;
+  }
+
+  #app footer .footer-menu {
+    font-size: 0.75rem;
+    width: 70%;
+  }
+  .dev-team{
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 3%;
+    grid-column-gap: 10%;
+  }
+  .dev-team a{
+    font-size: 1.6em;
+    margin-top: 5%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+  .dev-team p{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  #app.main.principal main {
+    padding: 0;
+    margin-top: 1rem;
+  }
+  #app.main.principal main section {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #app footer .social-media {
+    font-size: 1rem;
+    width: 15%;
+  }
+
+  #app footer .footer-menu {
+    font-size: 0.75rem;
+    width: 70%;
+  }
+  #app.detail-anuncio .anuncio-wrapper .anuncio-data .text-anuncio h2 {
+    min-width: 18%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #app.detail-anuncio .anuncio-wrapper .text-anuncio {
+    display: block;
+  }
+
+  #app.detail-anuncio .anuncio-wrapper .anuncio-data h1 {
+    width: 100%;
+  }
+
+  #app.detail-anuncio .anuncio-wrapper .anuncio-data .text-anuncio h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: right;
+  }
+
+  #app.detail-anuncio .content-wrapper .photos {
+    display: block;
+    width: 100%;
+  }
+
+  #app.detail-anuncio .content-wrapper .photos .principal {
+    width: 100%;
+    height: 12rem;
+    margin-bottom: 5%;
+  }
+
+  #app.detail-anuncio .content-wrapper .photos .secondary {
+    width: 100%;
+  }
+
+  #app.detail-anuncio .content-wrapper .photos .secondary-picture {
+    margin-bottom: 5%;
+  }
+
+  #app header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+  }
+
+  #app main {
+    margin-top: 5rem;
+    padding: 0 10%;
+  }
+
+  #app.main.contact .contact-wrapper {
+    flex-direction: column;
+  }
+
+  #app.main.contact .contact-wrapper article {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #app.home main section {
+    flex-direction: column;
+  }
+
+  #app.home main section article {
+    width: 100%;
+  }
+
+  #app.home main section .content {
+    width: 100%;
+  }
+
+  #app.home main section article.content img {
+    width: 80vw;
+    margin-bottom: 2rem;
+  }
+
+  #app.home main section article.content h1 {
+    font-size: 3rem;
+  }
+
+  #app.home main section article.content p {
+    font-size: 1rem;
+  }
+
+  #app.home main section article.content .buttons {
+    margin-top: 2rem;
+  }
+
+  #app.main.contact p {
+    text-align: justify;
+    font-size: 0.8rem;
+  }
+
+  #app.main.anunciar form,
+  #app.main.contact form {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  #app.main.anunciar #form-anunciar div {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .label-files {
+    align-self: center;
+  }
+
+  #app.main.anunciar form .submit {
+    width: 100%;
+  }
+
+  #app.main.anunciar form .submit .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #app.main.anunciar form .submit .buttons button {
+    margin-bottom: 1rem;
+  }
+
+  #app.main.anunciar form .submit .buttons button:last-child {
+    margin: 0;
+  }
+
+  #app.main.principal .content-wrapper {
+    margin: 0;
+  }
+
+  #app.main.principal .content-wrapper .room-wrapper,
+  #app.main.profile .content-wrapper .liked-wrapper,
+  #app.main.profile .content-wrapper .room-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  #app.main.profile main {
+    padding: 0;
+  }
+
+  #app.main.profile .profile-wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #app.main.profile .profile-wrapper h1:first-child {
+    margin-bottom: 1rem;
+  }
+
+  #app.main.profile .profile-wrapper article {
+    height: 100%;
+    padding: 1rem 0;
+  }
+
+  #app.main.profile .profile-wrapper article form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #app.main.profile .profile-wrapper article form .box-input {
+    width: 100%;
+  }
+
+  #app.main.profile .content-wrapper {
+    width: 100%;
+  }
+
+  #app.main.profile .content-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .search-wrapper input {
+    width: 15rem;
+  }
+
+  #app.detail-anuncio main section {
+    flex-direction: column;
+  }
+
+  #app.detail-anuncio main section article {
+    width: 100%;
+  }
+
+  #app.detail-anuncio main section .content {
+    width: 100%;
+  }
+
+  .btn {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  #app footer .social-media {
+    font-size: 1rem;
+    width: 50%;
+  }
+
+  #app footer .footer-menu {
+    font-size: 0.75rem;
+    width: 50%;
+  }
+
+  #app footer .footer-menu ul {
+    flex-direction: column;
+    padding-left: 20%;
+  }
+
+  #app footer .footer-menu ul li {
+    border: none;
+    text-align: left;
+  }
+
+  .hide-desktop {
+    display: flex;
+  }
+
+  .hide-tablet {
+    display: flex;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  #app.detail-anuncio .anuncio-wrapper, #app.detail-anuncio .content-wrapper {
+    padding: 0;
+  }
+
+  .dev-team{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .modal-content h6 {
+    text-align: justify;
+    font-size: 0.8rem;
+  }
+  .modal-content h5{
+    font-size: 1.1rem;
+  }
+  .dev-team a{
+    font-size: 2em;
+  }
+  .modal-content p {
+    font-size: 1rem;
+  }
+  .dev img {
+    width: 80%;
+  }
+  .dev {
+    margin-bottom: 0.5rem;
+  }
+  .modal-body {
+    padding-bottom: 100%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .modal-content h6 {
+    font-size: 0.7rem;
+  }
+  .unishare-sobre p{
+    font-size: 0.8rem;
+  }
+}
